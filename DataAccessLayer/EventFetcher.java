@@ -4,5 +4,3 @@ public class EventFetcher {
     public EventFetcher() {
     }
 }
-
-// testing
