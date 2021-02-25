@@ -3,7 +3,9 @@ package DataAccessLayer;
 import java.util.List;
 
 public class Decorations {
-    //Fields
+    private int decoID;
+    private String decoName;
+    private int decoQant;
 
     public Decorations(){}
 

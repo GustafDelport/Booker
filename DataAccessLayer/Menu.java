@@ -3,7 +3,10 @@ package DataAccessLayer;
 import java.util.List;
 
 public class Menu {
-    //Fields
+    private int foodItem;
+    private String foodName;
+    private String foodType;
+    private String foodDescription;
 
     public Menu(){}
 
