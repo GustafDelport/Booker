@@ -5,5 +5,3 @@ public class EventFetcher {
     }
 }
 
-// This is a Comment
-
