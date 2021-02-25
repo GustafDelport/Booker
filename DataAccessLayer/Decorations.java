@@ -9,20 +9,32 @@ public class Decorations {
 
     public Decorations(){}
 
-    public void setDecoID(int DecoID){
-        this.decoID = DecoID;
-    }
-
-    public void setDecoName(String DecoName){
-        this.decoName= DecoName;
-    }
-
-    public void setDecoQant(int DecoQuant){
-        this.decoQuant = DecoQuant;
-    }
-
     public List<Decorations> getDecorations(){
 
         return null;
     }
+
+	public int getDecoID() {
+		return decoID;
+	}
+
+	public void setDecoID(int decoID) {
+		this.decoID = decoID;
+	}
+
+	public String getDecoName() {
+		return decoName;
+	}
+
+	public void setDecoName(String decoName) {
+		this.decoName = decoName;
+	}
+
+	public int getDecoQuant() {
+		return decoQuant;
+	}
+
+	public void setDecoQuant(int decoQuant) {
+		this.decoQuant = decoQuant;
+	}
 }
