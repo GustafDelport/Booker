@@ -1,9 +1,4 @@
 package BusinessLogicLayer;
-
-import java.util.List;
-
-import DataAccessLayer.*;
-
 public class AccountHandler {
     private String name;
     private String surname;
@@ -30,11 +25,6 @@ public class AccountHandler {
         //Code Here
         System.out.println(name + surname + phone + email + password + username);//Test
         return true;
-    }
-
-    public List<user> getUser(){
-        //Code Here
-        return null;
     }
 
     public boolean LoginAuth(){
