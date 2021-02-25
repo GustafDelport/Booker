@@ -1,4 +1,6 @@
 package BusinessLogicLayer;
+
+//Handles Logins and Registrations
 public class AccountHandler {
     private String name;
     private String surname;
