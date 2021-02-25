@@ -1,5 +1,8 @@
 package DataAccessLayer;
 
 public class EventFetcher {
-    public EventFetcher(){}
+    public EventFetcher() {
+    }
 }
+
+// testing
