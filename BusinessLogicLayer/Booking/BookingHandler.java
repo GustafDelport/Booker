@@ -1,5 +1,5 @@
-package BusinessLogicLayer;
+package BusinessLogicLayer.Booking;
 
-public interface Booking {
+public interface BookingHandler {
     
 }

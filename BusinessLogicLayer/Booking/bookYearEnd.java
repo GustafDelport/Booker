@@ -1,5 +1,5 @@
 package BusinessLogicLayer.Booking;
 
-public class bookYearEnd implements Booking{
+public class bookYearEnd implements BookingHandler{
     
 }

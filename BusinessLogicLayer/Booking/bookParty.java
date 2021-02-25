@@ -1,5 +1,5 @@
-package BusinessLogicLayer;
+package BusinessLogicLayer.Booking;
 
-public class bookParty implements Booking{
+public class bookParty implements BookingHandler{
     
 }
