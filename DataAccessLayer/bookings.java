@@ -19,6 +19,4 @@ public class bookings {
     public void IgnoreMe(){
         System.out.println(bookingID + clientUsername + date);
     }
-
-    //args constructor later
 }
