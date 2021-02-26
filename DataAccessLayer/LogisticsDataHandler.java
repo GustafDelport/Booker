@@ -1,5 +1,6 @@
 package DataAccessLayer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LogisticsDataHandler {
@@ -10,12 +11,12 @@ public class LogisticsDataHandler {
         //Get User Questions
     }
 
-    public List<Menu> getFoodOrder(){
+    public List<Menu> getFoodOrder(ArrayList<String> ID){
 
         return null;
     }
 
-    public List<Decorations> getDecorationsOrder(){
+    public List<Decorations> getDecorationsOrder(ArrayList<String> ID){
         return null;
     }
 }
