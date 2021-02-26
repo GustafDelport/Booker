@@ -16,6 +16,10 @@ public class NotificationHandler {
 
     }
 
+    public void getBooking(){
+
+    }
+
     public void genNotification(){
         
     } 
