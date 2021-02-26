@@ -1,5 +1,6 @@
 package DataAccessLayer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 //import BusinessLogicLayer.*;
@@ -21,12 +22,12 @@ public class user {
         this.email = Email;
     }
 
-    public List<user> getUsers(){
+    public List<user> getUsers(ArrayList<String> Names){
 
         return null;
     }
 
-    public user getUser(){
+    public user getUser(String Name){
         return null;
     }
 
