@@ -8,19 +8,19 @@ public class NotificationHandler {
 
     public NotificationHandler(){}
 
-    public void SendMail(user user){
-
+    public String SendMail(user user){
+        return null;
     }
 
-    public void confirmBooking(user user){
-
+    public String confirmBooking(user user){
+        return null;
     }
 
-    public void getBooking(){
-
+    public String getBooking(){
+        return null;
     }
 
-    public void genNotification(){
-        
+    public String genNotification(){
+        return null;
     } 
 }
