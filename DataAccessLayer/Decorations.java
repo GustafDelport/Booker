@@ -1,5 +1,6 @@
 package DataAccessLayer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Decorations {
@@ -9,7 +10,7 @@ public class Decorations {
 
     public Decorations(){}
 
-    public List<Decorations> getDecorations(){
+    public List<Decorations> getDecorations(ArrayList<String> ID){
 
         return null;
     }
