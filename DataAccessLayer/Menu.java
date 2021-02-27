@@ -1,5 +1,6 @@
 package DataAccessLayer;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Menu {
@@ -18,7 +19,9 @@ public class Menu {
     }
 
     public List<Menu> getMenus(){
-        return null;
+
+        // Temporary - used instead of "null"
+        return Collections.emptyList();
     }
 
     public int getFoodItem() {

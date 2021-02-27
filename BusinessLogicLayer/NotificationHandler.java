@@ -6,7 +6,9 @@ public class NotificationHandler {
 
     //use the user to get info and send mails and conformations
 
-    public NotificationHandler(){}
+    public NotificationHandler(){
+        // Code here
+    }
 
     public String SendMail(user user){
         return null;

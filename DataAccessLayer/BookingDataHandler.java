@@ -1,11 +1,14 @@
 package DataAccessLayer;
 
+import java.util.Collections;
 import java.util.List;
 
 public class BookingDataHandler {
 
     public List<bookings> getBookings(){
-        return null;
+        
+        // Temporary - used instead of "null"
+        return Collections.emptyList();
     }
 
     public bookings getBooking(){

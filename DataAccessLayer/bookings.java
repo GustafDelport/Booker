@@ -1,6 +1,7 @@
 package DataAccessLayer;
 
 import java.sql.Date;
+import java.util.Collections;
 import java.util.List;
 
 public class bookings {
@@ -17,7 +18,9 @@ public class bookings {
     }
 
     public List<bookings> GetBookings(){
-        return null;
+
+        // Temporary - used instead of "null"
+        return Collections.emptyList();
     }
 
     //LOL
