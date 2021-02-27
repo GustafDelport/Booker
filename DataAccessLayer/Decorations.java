@@ -1,6 +1,7 @@
 package DataAccessLayer;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Decorations {
@@ -8,11 +9,14 @@ public class Decorations {
     private String decoName;
     private int decoQuant;
 
-    public Decorations(){}
+    public Decorations(){
+		// Code here
+	}
 
     public List<Decorations> getDecorations(ArrayList<String> ID){
 
-        return null;
+        // Temporary - used instead of "null"
+        return Collections.emptyList();
     }
 
 	public int getDecoID() {

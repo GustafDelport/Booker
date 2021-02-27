@@ -17,7 +17,9 @@ public class bookings {
     }
 
     public List<bookings> GetBookings(){
-        return null;
+
+        // Temporary - used instead of "null"
+        return Collections.emptyList();
     }
 
     //LOL

@@ -1,6 +1,7 @@
 package DataAccessLayer;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 //import BusinessLogicLayer.*;
@@ -24,11 +25,14 @@ public class user {
 
     public List<user> getUsers(ArrayList<String> Names){
 
-        return null;
+        // Temporary - used instead of "null"
+        return Collections.emptyList();
     }
 
     public user getUser(String Name){
-        return null;
+
+        // Temporary - used instead of "null"
+        return Collections.emptyList();
     }
 
     public String getName() {
