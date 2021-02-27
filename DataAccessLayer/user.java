@@ -31,8 +31,7 @@ public class user {
 
     public user getUser(String Name){
 
-        // Temporary - used instead of "null"
-        return Collections.emptyList();
+        return null;
     }
 
     public String getName() {
