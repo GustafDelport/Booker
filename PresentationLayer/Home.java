@@ -4,15 +4,33 @@ import BusinessLogicLayer.AccountHandler;
 
 public class Home {
     public static void main(String[] args) {
+        //Variables
+        //#region
         Displays displays = new Displays();
         boolean login = false;
+        //#endregion
 
-        while (!login) {
-            //Give option to register or login here
+        int opt = displays.initialMenu();
 
-            String[] userInfo = displays.LoginDisplay();
-            AccountHandler AH = new AccountHandler(userInfo[0], userInfo[1]);
-            login = AH.LoginAuth();
+        switch (opt) {
+            case 1:
+                {
+                    while (!login) {            
+                        String[] userInfo = displays.LoginDisplay();
+                        AccountHandler AH = new AccountHandler(userInfo[0], userInfo[1]);
+                        login = AH.LoginAuth();
+
+                        //DO Current user passing
+                    }
+                }
+                break;
+            case 2:
+                {
+
+                }
+                break;
+            default:
+                break;
         }
     }
 }
