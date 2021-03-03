@@ -1,5 +1,7 @@
 package BusinessLogicLayer;
 
+import DataAccessLayer.user;
+
 //Handles Logins and Registrations
 public class AccountHandler {
     private String name;
@@ -30,8 +32,20 @@ public class AccountHandler {
     }
 
     public boolean LoginAuth(){
-        //Concept
-        return false;
+        boolean flag = false;
+
+        //Access DataHandler here to retrieve user info.
+
+        if (password == "admin" && username == "admin"){
+            flag = true;    
+        }
+
+        return flag;
+    }
+
+    public user getUser(int ID){
+
+        return null;
     }
 
 

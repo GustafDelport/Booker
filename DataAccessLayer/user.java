@@ -11,6 +11,7 @@ public class user {
     private String surname;
     private String phone;
     private String email;
+    private int ID;
     //private String password;
     //private String username;
 
