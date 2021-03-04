@@ -1,7 +1,6 @@
 package PresentationLayer;
 
 import java.util.List;
-
 import BusinessLogicLayer.AccountHandler;
 
 public class Home {

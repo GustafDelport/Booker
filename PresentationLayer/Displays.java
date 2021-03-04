@@ -51,7 +51,7 @@ public class Displays {
         boolean flag = true;
 
         while (flag) {
-            
+            clrscr();
             System.out.println("Enter Name: ");
             list.add(iScanner.nextLine());
             
