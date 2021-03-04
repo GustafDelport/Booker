@@ -31,16 +31,16 @@ public class AccountHandler {
 
     public boolean Register(){
         //use try to see if we can retrieve a user
-        // if (ValidateUsername(username)) {
-        //     return false;
-        // }
-        // else {
+        if (ValidateUsername(username)) {
+            return false;
+        }
+        else {
             StorageHandler sHandler = new StorageHandler();
             user user = new user(name, surname, phone, email, username, password);
 
             sHandler.StoreUser(user);
             return true;
-        //}
+        }     
     }
 
     public boolean LoginAuth(){

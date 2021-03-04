@@ -10,13 +10,14 @@ public class Displays {
     Scanner iScanner = new Scanner(System.in);
 
     public String[] LoginDisplay() {
-        clrscr();
 
         System.out.println("Enter Username: ");
         String userName = iScanner.next();
 
         System.out.println("Enter Password: ");
         String password = iScanner.next();
+        
+        System.out.println("\n");
 
         String[] userInfo = {userName,password};
 
@@ -46,35 +47,32 @@ public class Displays {
     }
 
     public List<String> RegisterMenu(){
-        clrscr();
         List<String> list = new ArrayList<>();
-        boolean flag = true;
-
-        while (flag) {
-            clrscr();
-            System.out.println("Enter Name: ");
-            list.add(iScanner.next());
+    
+        System.out.println("Enter Name: ");
+        list.add(iScanner.next());
             
-            System.out.println("Enter Surname: ");
-            list.add(iScanner.next());
+        System.out.println("Enter Surname: ");
+        list.add(iScanner.next());
 
-            System.out.println("Enter Phone: ");
-            list.add(iScanner.next());
+        System.out.println("Enter Phone: ");
+        list.add(iScanner.next());
 
-            System.out.println("Enter Email: ");
-            list.add(iScanner.next());
+        System.out.println("Enter Email: ");
+        list.add(iScanner.next());
 
-            System.out.println("Enter Username: ");
-            list.add(iScanner.next());
+        System.out.println("Enter Username: ");
+        list.add(iScanner.next());
             
-            System.out.println("Enter Password: ");
-            list.add(iScanner.next());
+        System.out.println("Enter Password: ");
+        list.add(iScanner.next());
 
-        }
+        System.out.println("\n");
+
         return list;
     }
 
-    private static void clrscr(){
+    public static void clrscr(){
         //Clears Screen in java
         try {
             if (System.getProperty("os.name").contains("Windows"))

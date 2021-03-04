@@ -24,6 +24,7 @@ public class Main {
                         //We want to clear instance to save memory i use null because garbage collector will delete it
                         AH = null;
                     }
+                    Displays.clrscr();
                 }
                 break;
             case 2:
@@ -32,9 +33,13 @@ public class Main {
                         List<String> list = displays.RegisterMenu();
                         AccountHandler AH = new AccountHandler(list.get(0), list.get(1),list.get(2), list.get(3), list.get(4), list.get(5));
 
+                        //System.out.println(list.toString());
+
                         register = AH.Register();
+                        System.out.println("The username is taken");
                         AH = null;
                     }
+                    Displays.clrscr();
                 }
                 break;
         }
@@ -47,4 +52,5 @@ public class Main {
 
         //#endregion
     }
+
 }
