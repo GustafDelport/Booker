@@ -3,10 +3,8 @@ package DataAccessLayer.Serialisation;
 import java.io.*;
 import DataAccessLayer.DataObjets.user;
 
-public class Serialiser implements Serializable{
-
-    private static final long serialVersionUID = 1L;
-
+public class Serialiser{
+    
     public void SerialiseUser(user user) {
         try {
             String username = user.getUsername();

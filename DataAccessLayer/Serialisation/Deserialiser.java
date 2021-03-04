@@ -4,10 +4,8 @@ import java.io.*;
 
 import DataAccessLayer.DataObjets.*;
 
-public class Deserialiser implements Serializable{
+public class Deserialiser {
     
-    private static final long serialVersionUID = 1L;
-
     public user DeserialiseUser(String username) {
         user user = new user();
 

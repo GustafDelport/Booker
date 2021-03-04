@@ -3,8 +3,8 @@ package DataAccessLayer.DataObjets;
 import java.io.Serializable;
 public class user implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	private String name;
+    private static final long serialVersionUID = -1565963442536170864L;
+    private String name;
     private String surname;
     private String phone;
     private String email;
