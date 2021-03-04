@@ -7,15 +7,18 @@ import java.util.List;
 public class bookings {
     private String bookingID;
     private String clientUsername;
+    private String status;
     private Date date;
 
-    public bookings(){}
-
-    public bookings(String BookingID, String ClientUsername, Date Date){
-        this.bookingID = BookingID;
-        this.clientUsername = ClientUsername;
-        this.date = Date;
+    
+    public bookings(String bookingID, String clientUsername, String status, Date date) {
+        this.bookingID = bookingID;
+        this.clientUsername = clientUsername;
+        this.status = status;
+        this.date = date;
     }
+
+    public bookings(){}
 
     public List<bookings> GetBookings(){
 
@@ -25,6 +28,7 @@ public class bookings {
 
     //LOL
     public void IgnoreMe(){
-        System.out.println(bookingID + clientUsername + date);
+        System.out.println(bookingID + clientUsername + date + status);
     }
+
 }

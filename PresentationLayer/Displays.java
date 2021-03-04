@@ -71,6 +71,37 @@ public class Displays {
         return list;
     }
 
+    public int AdminMenu(){
+
+        System.out.println("============ Booker ============");
+        System.out.println("Menu Items\n1 - View Bookings\n2 - Confirm Bookings\n3 - Notifications");
+        System.out.println("================================"); 
+
+        //Validate anwser either 1 or 2 or 3 or 4
+        int a = iScanner.nextInt();
+
+        if (a == 1 || a == 2 || a == 3 || a == 4) {
+            //flag = true;
+        }
+        else System.out.println("That was not a valid input");
+        return a;
+    }
+
+    public int ClientMenu(){
+        System.out.println("============ Booker ============");
+        System.out.println("Menu Items\n1 - View Bookings\n2 - Make Booking\n3 - Edit Bookings");
+        System.out.println("================================"); 
+
+        //Validate anwser either 1 or 2 or 3 or 4
+        int a = iScanner.nextInt();
+
+        if (a == 1 || a == 2 || a == 3 || a == 4) {
+            //flag = true;
+        }
+        else System.out.println("That was not a valid input");
+        return a;
+    }
+
     public static void clrscr(){
         //Clears Screen in java
         try {

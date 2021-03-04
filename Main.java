@@ -6,7 +6,8 @@ public class Main {
         //Variables
         //#region
         Displays displays = new Displays();
-        boolean login = false, register = false;
+        boolean login = false, register = false, admin = false, run = true;
+        int menuOpt;
         //#endregion
 
         //Login and register part
@@ -20,6 +21,7 @@ public class Main {
                         String[] userInfo = displays.LoginDisplay();
                         AccountHandler AH = new AccountHandler(userInfo[0], userInfo[1]);
                         login = AH.LoginAuth();
+                        admin = AH.ValidateRole();
                         
                         //We want to clear instance to save memory i use null because garbage collector will delete it
                         AH = null;
@@ -50,6 +52,63 @@ public class Main {
 
         //Booking displays
         //#region 
+        
+        while (run) {
+            Displays.clrscr();
+
+            if (admin) {
+                menuOpt = displays.AdminMenu();
+                switch (menuOpt) {
+                    case 1:
+                        {
+                            //View Bookings
+                        }
+                        break;
+                    case 2:
+                        {
+                            //Confrim Bookings
+                        }
+                        break;
+                    case 3:
+                        {
+                            //Notifications
+                        }
+                        break;
+                    case 4:
+                        {
+                            System.exit(0);
+                        }
+                        break;
+                }
+                Displays.clrscr();
+            }
+            else{
+                menuOpt = displays.ClientMenu();
+                switch (menuOpt) {
+                    case 1:
+                        {
+                            //View Bookings
+                        }
+                        break;
+                    case 2:
+                        {
+                            //Make Booking
+                        }
+                        break;
+                    case 3:
+                        {
+                            //Edit Booking
+                        }
+                        break;
+                    case 4:
+                        {
+                            System.exit(0);
+                        }
+                        break;
+                }
+                Displays.clrscr();
+            }
+        }
         
 
         //#endregion

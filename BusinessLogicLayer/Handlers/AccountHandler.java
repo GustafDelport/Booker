@@ -72,4 +72,14 @@ public class AccountHandler {
 
         return flag;
     }
+
+    public boolean ValidateRole(){
+        boolean flag = false;
+
+        if (username.equals("Admin")) {
+            flag = true;
+        }
+        else flag = false;
+        return flag;
+    }
 }

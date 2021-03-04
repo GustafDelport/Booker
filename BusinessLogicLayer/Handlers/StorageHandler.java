@@ -14,4 +14,13 @@ public class StorageHandler{
         Deserialiser des = new Deserialiser();
         return des.DeserialiseUser(userName);
     }
+
+    public void StoreBooking(){
+        
+    }
+
+    public bookings RetrieveBooking(){
+
+        return null;
+    }
 }
