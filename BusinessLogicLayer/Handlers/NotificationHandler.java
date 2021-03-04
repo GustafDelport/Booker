@@ -1,6 +1,6 @@
 package BusinessLogicLayer.Handlers;
 
-import DataAccessLayer.*;
+import DataAccessLayer.DataObjets.*;
 
 public class NotificationHandler {
 

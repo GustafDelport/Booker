@@ -1,8 +1,7 @@
 package DataAccessLayer.Serialisation;
 
 import java.io.*;
-
-import DataAccessLayer.user;
+import DataAccessLayer.DataObjets.user;
 
 public class Serialiser {
     public void Serialise(user user){

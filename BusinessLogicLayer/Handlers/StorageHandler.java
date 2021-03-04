@@ -1,6 +1,6 @@
 package BusinessLogicLayer.Handlers;
 
-import DataAccessLayer.user;
+import DataAccessLayer.DataObjets.*;
 import DataAccessLayer.Serialisation.*;
 
 public class StorageHandler {

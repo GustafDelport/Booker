@@ -1,8 +1,11 @@
-package DataAccessLayer;
+package DataAccessLayer.DataHandlers;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import DataAccessLayer.DataObjets.Decorations;
+import DataAccessLayer.DataObjets.Menu;
 
 public class LogisticsDataHandler {
     
