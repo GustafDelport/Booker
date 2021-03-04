@@ -5,6 +5,7 @@ import java.sql.Date;
 public class BookingHandler {
     private String bookingID;
     private String clientUsername;
+    private String type;
     private String status;
     private Date date;
 
@@ -17,35 +18,7 @@ public class BookingHandler {
 
     public BookingHandler() {}
 
-    public String getBookingID() {
-        return bookingID;
-    }
+    public void MakeBooking(){
 
-    public void setBookingID(String bookingID) {
-        this.bookingID = bookingID;
     }
-
-    public String getClientUsername() {
-        return clientUsername;
-    }
-
-    public void setClientUsername(String clientUsername) {
-        this.clientUsername = clientUsername;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }    
 }
