@@ -12,6 +12,8 @@ public class Home {
         boolean login = false, register = false;
         //#endregion
 
+        //Login and register part
+        //#region
         int opt = displays.initialMenu();
 
         switch (opt) {
@@ -44,5 +46,13 @@ public class Home {
                 }
                 break;
         }
+
+        //#endregion
+
+        //Booking displays
+        //#region 
+
+
+        //#endregion
     }
 }

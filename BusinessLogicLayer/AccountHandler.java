@@ -28,16 +28,14 @@ public class AccountHandler {
     }
 
     public boolean Register(){
-
         //Get users to authenticate if they already exists (Username)
-        //Code Here
+
         System.out.println(name + surname + phone + email + password + username);//Test
         return false;
     }
 
     public boolean LoginAuth(){
         boolean flag = false;
-
         //Access DataHandler here to retrieve user info.
 
         if (password == "admin" && username == "admin"){

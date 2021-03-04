@@ -42,8 +42,6 @@ public class Displays {
             else System.out.println("That was not a valid input");
             
         }
-
-        //iScanner.close();
         return a;
     }
 
@@ -73,8 +71,6 @@ public class Displays {
             list.add(iScanner.nextLine());
 
         }
-        //iScanner.close();
-
         return list;
     }
 
