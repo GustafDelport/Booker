@@ -13,10 +13,10 @@ public class Displays {
         clrscr();
 
         System.out.println("Enter Username: ");
-        String userName = iScanner.nextLine();
+        String userName = iScanner.next();
 
         System.out.println("Enter Password: ");
-        String password = iScanner.nextLine();
+        String password = iScanner.next();
 
         return new String[]{userName,password};
     }
@@ -45,7 +45,7 @@ public class Displays {
 
     public List<String> RegisterMenu(){
         clrscr();
-        List<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<String>();
         boolean flag = true;
             clrscr();
             System.out.println("Enter Name: ");
