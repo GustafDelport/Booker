@@ -1,4 +1,4 @@
-package BusinessLogicLayer.Booking;
+package BusinessLogicLayer.Handlers;
 
 // Interface
 public interface BookingHandler {
