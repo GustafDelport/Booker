@@ -1,10 +1,11 @@
 package BusinessLogicLayer.Booking;
 
-public class bookWedding implements BookingHandler{
+import BusinessLogicLayer.Handlers.BookingHandler;
+
+public class bookWedding implements BookingHandler {
 
     @Override
     public void MakeBooking() {
-        // TODO Auto-generated method stub
 
     }
 

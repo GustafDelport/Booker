@@ -1,9 +1,7 @@
-package PresentationLayer;
-
 import java.util.List;
-import BusinessLogicLayer.AccountHandler;
-
-public class Home {
+import BusinessLogicLayer.Handlers.*;
+import PresentationLayer.Displays;
+public class Main {
     public static void main(String[] args) {
         //Variables
         //#region
@@ -22,12 +20,12 @@ public class Home {
                         String[] userInfo = displays.LoginDisplay();
                         AccountHandler AH = new AccountHandler(userInfo[0], userInfo[1]);
                         login = AH.LoginAuth();
-
-                        //DO Current user passing
-
+                        
                         //We want to clear instance to save memory i use null because garbage collector will delete it
                         AH = null;
                     }
+                    Displays.clrscr();
+                    System.out.println("Welcome");
                 }
                 break;
             case 2:
@@ -35,13 +33,15 @@ public class Home {
                     while (!register) {
                         List<String> list = displays.RegisterMenu();
                         AccountHandler AH = new AccountHandler(list.get(0), list.get(1),list.get(2), list.get(3), list.get(4), list.get(5));
-                        
-                        register = AH.Register();
 
+                        //System.out.println(list.toString());
+
+                        register = AH.Register();
+                        System.out.println("The username is taken");
                         AH = null;
                     }
-
-                    //DO Current user passing
+                    Displays.clrscr();
+                    System.out.println("Welcome");
                 }
                 break;
         }
@@ -54,4 +54,5 @@ public class Home {
 
         //#endregion
     }
+
 }

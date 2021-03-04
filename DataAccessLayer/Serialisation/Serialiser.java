@@ -1,0 +1,28 @@
+package DataAccessLayer.Serialisation;
+
+import java.io.*;
+import DataAccessLayer.DataObjets.user;
+
+public class Serialiser implements Serializable{
+
+    private static final long serialVersionUID = 1L;
+
+    public void SerialiseUser(user user) {
+        try {
+            String username = user.getUsername();
+            
+            FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\" + username + ".ser");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            oos.writeObject(user);
+            oos.reset();
+
+            oos.close();
+            fos.close();
+        } 
+        catch (Exception mes) {
+            System.out.println("Error" + mes);
+        }
+    }
+}
+
