@@ -11,7 +11,7 @@ public class Serialiser{
         try {
             String username = user.getUsername();
             
-            FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\" + username + ".ser");
+            FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\ClientsData" + username + ".ser");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
             oos.writeObject(user);
@@ -30,7 +30,7 @@ public class Serialiser{
             String bookingID = booking.getBookingID();
             String cName = booking.getClientUsername();
             
-            FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\" + cName + bookingID + ".ser");
+            FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\BookingData\\" + cName + bookingID + ".ser");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
             oos.writeObject(booking);

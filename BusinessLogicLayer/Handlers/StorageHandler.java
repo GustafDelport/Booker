@@ -20,8 +20,8 @@ public class StorageHandler{
         s.SerialiseBooking(booking);
     }
 
-    public bookings RetrieveBooking(String bookingID){
+    public bookings RetrieveBooking(String bookingID, String cName){
         Deserialiser des = new Deserialiser();
-        return des.DeserialiseBooking(bookingID);
+        return des.DeserialiseBooking(bookingID,cName);
     }
 }

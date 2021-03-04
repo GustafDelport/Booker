@@ -16,10 +16,8 @@ public class BookingHandler {
     private int numberOfPeople;
     private Date date;
 
-    public BookingHandler(String bookingID, String clientUsername, String status, Date date,String type, int numberOfPeople) {
-        this.bookingID = bookingID;
+    public BookingHandler(String clientUsername, Date date, String type, int numberOfPeople) {
         this.clientUsername = clientUsername;
-        this.status = status;
         this.date = date;
         this.type = type;
         this.numberOfPeople = numberOfPeople;

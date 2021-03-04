@@ -102,6 +102,9 @@ public class Displays {
         return a;
     }
 
+    // public List<String> BookingMenu(){
+        
+    // }
     public static void clrscr(){
         //Clears Screen in java
         try {

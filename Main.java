@@ -1,3 +1,5 @@
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import BusinessLogicLayer.Handlers.*;
 import PresentationLayer.Displays;
@@ -61,7 +63,12 @@ public class Main {
                 switch (menuOpt) {
                     case 1:
                         {
-                            StorageHandler sHandler = new StorageHandler();
+                            //SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
+                            Date date = new Date(System.currentTimeMillis());
+    
+                            BookingHandler bHandler = new BookingHandler("Jan", date, "Wedding", 50);
+                            bHandler.MakeBooking();
+                            
                         }
                         break;
                     case 2:
