@@ -1,5 +1,6 @@
 package PresentationLayer;
 
+import java.util.List;
 import BusinessLogicLayer.AccountHandler;
 
 public class Home {
@@ -7,9 +8,11 @@ public class Home {
         //Variables
         //#region
         Displays displays = new Displays();
-        boolean login = false;
+        boolean login = false, register = false;
         //#endregion
 
+        //Login and register part
+        //#region
         int opt = displays.initialMenu();
 
         switch (opt) {
@@ -21,16 +24,34 @@ public class Home {
                         login = AH.LoginAuth();
 
                         //DO Current user passing
+
+                        //We want to clear instance to save memory i use null because garbage collector will delete it
+                        AH = null;
                     }
                 }
                 break;
             case 2:
                 {
+                    while (!register) {
+                        List<String> list = displays.RegisterMenu();
+                        AccountHandler AH = new AccountHandler(list.get(0), list.get(1),list.get(2), list.get(3), list.get(4), list.get(5));
+                        
+                        register = AH.Register();
 
+                        AH = null;
+                    }
+
+                    //DO Current user passing
                 }
                 break;
-            default:
-                break;
         }
+
+        //#endregion
+
+        //Booking displays
+        //#region 
+
+
+        //#endregion
     }
 }
