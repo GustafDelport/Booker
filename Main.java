@@ -1,9 +1,7 @@
-package PresentationLayer;
-
 import java.util.List;
 import BusinessLogicLayer.AccountHandler;
-
-public class Home {
+import PresentationLayer.Displays;
+public class Main {
     public static void main(String[] args) {
         //Variables
         //#region

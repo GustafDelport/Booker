@@ -53,22 +53,22 @@ public class Displays {
         while (flag) {
             clrscr();
             System.out.println("Enter Name: ");
-            list.add(iScanner.nextLine());
+            list.add(iScanner.next());
             
             System.out.println("Enter Surname: ");
-            list.add(iScanner.nextLine());
+            list.add(iScanner.next());
 
             System.out.println("Enter Phone: ");
-            list.add(iScanner.nextLine());
+            list.add(iScanner.next());
 
             System.out.println("Enter Email: ");
-            list.add(iScanner.nextLine());
+            list.add(iScanner.next());
 
             System.out.println("Enter Username: ");
-            list.add(iScanner.nextLine());
+            list.add(iScanner.next());
             
             System.out.println("Enter Password: ");
-            list.add(iScanner.nextLine());
+            list.add(iScanner.next());
 
         }
         return list;
