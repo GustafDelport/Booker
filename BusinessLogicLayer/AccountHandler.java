@@ -18,17 +18,21 @@ public class AccountHandler {
     }
 
     //Called when we want to Register
-    public AccountHandler(String Name, String Surname, String Phone, String Email){
+    public AccountHandler(String Name, String Surname, String Phone, String Email, String Username, String Password){
         this.name = Name;
         this.surname = Surname;
         this.phone = Phone;
         this.email = Email;
+        this.username = Username;
+        this.password = Password;
     }
 
     public boolean Register(){
+
+        //Get users to authenticate if they already exists (Username)
         //Code Here
         System.out.println(name + surname + phone + email + password + username);//Test
-        return true;
+        return false;
     }
 
     public boolean LoginAuth(){
