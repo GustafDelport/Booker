@@ -62,14 +62,14 @@ public class BookingHandler {
         }
     }
 
+    //One implement that why its not part of the interface
     public List<String> ViewBookings(){
         List<String> list = new ArrayList<>();
         StorageHandler sHandler = new StorageHandler();
-        
+
         bookings b = sHandler.RetrieveBooking(bookingID, clientUsername);
 
         list.add(b.getBookingID() + " " + b.getClientUsername());
-
         return list;
     }
 }

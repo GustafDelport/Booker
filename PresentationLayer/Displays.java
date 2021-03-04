@@ -2,6 +2,8 @@ package PresentationLayer;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -102,9 +104,11 @@ public class Displays {
         return a;
     }
 
-    // public List<String> BookingMenu(){
+    public List<String> BookingMenu(){
+        //Questions and stuff
         
-    // }
+        return Collections.emptyList();
+    }
     public static void clrscr(){
         //Clears Screen in java
         try {

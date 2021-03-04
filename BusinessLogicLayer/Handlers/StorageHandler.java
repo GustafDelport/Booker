@@ -23,5 +23,8 @@ public class StorageHandler{
     public bookings RetrieveBooking(String bookingID, String cName){
         Deserialiser des = new Deserialiser();
         return des.DeserialiseBooking(bookingID,cName);
+
+
+        // NOTE try saving all bookings of a person in a list of bookings and read through list and save it as their username.ser
     }
 }
