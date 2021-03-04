@@ -14,7 +14,7 @@ public class AccountHandler {
     private String username;
 
     //Called when we want to Login
-    public AccountHandler(String Password, String Username){
+    public AccountHandler(String Username, String Password){
         this.password = Password;
         this.username = Username;
     }
@@ -50,6 +50,8 @@ public class AccountHandler {
         StorageHandler sHandler = new StorageHandler();
         user user = sHandler.RetrieveUser(username);
 
+        //System.out.println(username);
+
         if (password.equals(user.getPassword()) && username.equals(user.getUsername())){
             flag = true;    
         }
@@ -57,7 +59,6 @@ public class AccountHandler {
 
         //Close on heap
         sHandler = null;
-
         return flag;
     }
 

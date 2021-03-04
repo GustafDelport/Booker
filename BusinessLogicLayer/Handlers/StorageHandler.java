@@ -3,9 +3,9 @@ package BusinessLogicLayer.Handlers;
 import DataAccessLayer.DataObjets.*;
 import DataAccessLayer.Serialisation.*;
 
-public class StorageHandler {
+public class StorageHandler{
 
-    public void StoreUser(user user){
+    public void StoreUser(user user) {
         Serialiser s = new Serialiser();
         s.SerialiseUser(user);
     }
@@ -14,5 +14,4 @@ public class StorageHandler {
         Deserialiser des = new Deserialiser();
         return des.DeserialiseUser(userName);
     }
-    
 }

@@ -10,13 +10,12 @@ public class Displays {
     Scanner iScanner = new Scanner(System.in);
 
     public String[] LoginDisplay() {
-
         System.out.println("Enter Username: ");
         String userName = iScanner.next();
 
         System.out.println("Enter Password: ");
         String password = iScanner.next();
-        
+
         System.out.println("\n");
 
         String[] userInfo = {userName,password};

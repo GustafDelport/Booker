@@ -3,9 +3,11 @@ package DataAccessLayer.Serialisation;
 import java.io.*;
 import DataAccessLayer.DataObjets.user;
 
-public class Serialiser {
+public class Serialiser implements Serializable{
 
-    public void SerialiseUser(user user){
+    private static final long serialVersionUID = 1L;
+
+    public void SerialiseUser(user user) {
         try {
             String username = user.getUsername();
             
@@ -17,7 +19,6 @@ public class Serialiser {
 
             oos.close();
             fos.close();
-
         } 
         catch (Exception mes) {
             System.out.println("Error" + mes);

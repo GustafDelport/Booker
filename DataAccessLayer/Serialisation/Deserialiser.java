@@ -4,9 +4,11 @@ import java.io.*;
 
 import DataAccessLayer.DataObjets.*;
 
-public class Deserialiser {
+public class Deserialiser implements Serializable{
     
-    public user DeserialiseUser(String username){
+    private static final long serialVersionUID = 1L;
+
+    public user DeserialiseUser(String username) {
         user user = new user();
 
         try {
@@ -19,9 +21,8 @@ public class Deserialiser {
             ois.close();
 
         } catch (Exception mes) {
-            System.out.println("The user does not exist please register");
+            System.out.println(mes);
         }
-
         return user;
     }
 }

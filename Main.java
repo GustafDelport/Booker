@@ -20,11 +20,12 @@ public class Main {
                         String[] userInfo = displays.LoginDisplay();
                         AccountHandler AH = new AccountHandler(userInfo[0], userInfo[1]);
                         login = AH.LoginAuth();
-
+                        
                         //We want to clear instance to save memory i use null because garbage collector will delete it
                         AH = null;
                     }
                     Displays.clrscr();
+                    System.out.println("Welcome");
                 }
                 break;
             case 2:
@@ -40,6 +41,7 @@ public class Main {
                         AH = null;
                     }
                     Displays.clrscr();
+                    System.out.println("Welcome");
                 }
                 break;
         }

@@ -1,13 +1,10 @@
 package DataAccessLayer.DataObjets;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.io.Serializable;
+public class user implements Serializable {
 
-//import BusinessLogicLayer.*;
-
-public class user {
-    private String name;
+	private static final long serialVersionUID = 1L;
+	private String name;
     private String surname;
     private String phone;
     private String email;
@@ -24,17 +21,6 @@ public class user {
         this.email = Email;
         this.username = Username;
         this.password = Password;
-    }
-
-    public List<user> getUsers(ArrayList<String> Names){
-
-        // Temporary - used instead of "null"
-        return Collections.emptyList();
-    }
-
-    public user getUser(String Name){
-
-        return null;
     }
 
     public String getName() {
