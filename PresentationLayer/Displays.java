@@ -13,10 +13,10 @@ public class Displays {
         clrscr();
 
         System.out.println("Enter Username: ");
-        String userName = iScanner.nextLine();
+        String userName = iScanner.next();
 
         System.out.println("Enter Password: ");
-        String password = iScanner.nextLine();
+        String password = iScanner.next();
 
         String[] userInfo = {userName,password};
 
