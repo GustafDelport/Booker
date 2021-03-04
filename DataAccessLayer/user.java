@@ -11,6 +11,7 @@ public class user {
     private String surname;
     private String phone;
     private String email;
+    private int ID;
     //private String password;
     //private String username;
 
@@ -64,5 +65,13 @@ public class user {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int iD) {
+        ID = iD;
     }
 }
