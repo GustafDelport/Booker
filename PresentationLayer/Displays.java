@@ -4,22 +4,21 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 public class Displays {
 
-    public String[] LoginDisplay(){
+    Scanner iScanner = new Scanner(System.in);
+
+    public String[] LoginDisplay() {
         clrscr();
 
-        Scanner iScanner = new Scanner(System.in);
-
         System.out.println("Enter Username: ");
-        String userName = iScanner.next();
+        String userName = iScanner.nextLine();
 
         System.out.println("Enter Password: ");
         String password = iScanner.nextLine();
 
         String[] userInfo = {userName,password};
-
-        iScanner.close();
 
         return userInfo;
     }
@@ -29,7 +28,6 @@ public class Displays {
 
         boolean flag = false;
         int a = 0;
-        Scanner iScanner = new Scanner(System.in);
 
         while (!flag) {
             System.out.println("====== Welcome to Booker ======");
@@ -41,43 +39,46 @@ public class Displays {
             if (a == 1 || a == 2) {
                 flag = true;
             }
+            else System.out.println("That was not a valid input");
             
         }
 
-        iScanner.close();
+        //iScanner.close();
         return a;
     }
 
     public List<String> RegisterMenu(){
         clrscr();
         List<String> list = new ArrayList<>();
+        boolean flag = true;
 
-        Scanner iScanner = new Scanner(System.in);
+        while (flag) {
+            
+            System.out.println("Enter Name: ");
+            list.add(iScanner.nextLine());
+            
+            System.out.println("Enter Surname: ");
+            list.add(iScanner.nextLine());
 
-        System.out.println("Enter Name: ");
-        list.add(iScanner.next());
+            System.out.println("Enter Phone: ");
+            list.add(iScanner.nextLine());
 
-        System.out.println("Enter Surname: ");
-        list.add(iScanner.next());
+            System.out.println("Enter Email: ");
+            list.add(iScanner.nextLine());
 
-        System.out.println("Enter Phone: ");
-        list.add(iScanner.next());
+            System.out.println("Enter Username: ");
+            list.add(iScanner.nextLine());
+            
+            System.out.println("Enter Password: ");
+            list.add(iScanner.nextLine());
 
-        System.out.println("Enter Email: ");
-        list.add(iScanner.next());
-
-        System.out.println("Enter Username: ");
-        list.add(iScanner.next());
-        
-        System.out.println("Enter Password: ");
-        list.add(iScanner.next());
-
-        iScanner.close();
+        }
+        //iScanner.close();
 
         return list;
     }
 
-    public static void clrscr(){
+    private static void clrscr(){
         //Clears Screen in java
         try {
             if (System.getProperty("os.name").contains("Windows"))

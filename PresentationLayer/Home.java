@@ -43,8 +43,6 @@ public class Home {
                     //DO Current user passing
                 }
                 break;
-            default:
-                break;
         }
     }
 }
