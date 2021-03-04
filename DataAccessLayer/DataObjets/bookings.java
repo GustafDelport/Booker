@@ -7,14 +7,33 @@ public class bookings {
     private String clientUsername;
     private String type;
     private String status;
+    private int numberOfPeople;
     private Date date;
+    private double price;
 
-    public bookings(String bookingID, String clientUsername, String status, Date date, String Type) {
+    public bookings(String bookingID, String clientUsername, String status, Date date, String Type,int numberOfPeople) {
         this.bookingID = bookingID;
         this.clientUsername = clientUsername;
         this.status = status;
         this.date = date;
         this.type = Type;
+        this.setNumberOfPeople(numberOfPeople);
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getNumberOfPeople() {
+        return numberOfPeople;
+    }
+
+    public void setNumberOfPeople(int numberOfPeople) {
+        this.numberOfPeople = numberOfPeople;
     }
 
     public String getType() {

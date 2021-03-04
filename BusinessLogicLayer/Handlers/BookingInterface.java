@@ -1,7 +1,9 @@
 package BusinessLogicLayer.Handlers;
 
+import DataAccessLayer.DataObjets.bookings;
+
 // Interface
 public interface BookingInterface {
-    private String type = "Booking";
-    public void MakeBooking();
+    public String type = "Booking";
+    public void MakeBooking(bookings booking);
 }

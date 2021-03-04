@@ -28,8 +28,9 @@ public class Serialiser{
     public void SerialiseBooking(bookings booking){
         try {
             String bookingID = booking.getBookingID();
+            String cName = booking.getClientUsername();
             
-            FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\" + bookingID + ".ser");
+            FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\" + cName + bookingID + ".ser");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
             oos.writeObject(booking);
