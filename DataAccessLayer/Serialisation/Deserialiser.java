@@ -6,7 +6,7 @@ import DataAccessLayer.DataObjets.*;
 
 public class Deserialiser {
     
-    public user Deserialise(String username){
+    public user DeserialiseUser(String username){
         user user = new user();
 
         try {
@@ -19,7 +19,7 @@ public class Deserialiser {
             ois.close();
 
         } catch (Exception mes) {
-            System.out.println("Error " + mes);
+            System.out.println("The user does not exist please register");
         }
 
         return user;

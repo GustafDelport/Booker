@@ -7,11 +7,11 @@ public class StorageHandler {
 
     public void StoreUser(user user){
         Serialiser s = new Serialiser();
-        s.Serialise(user);
+        s.SerialiseUser(user);
     }
 
-    public user RetrieveUser(){
-        Deserialiser dh = new Deserialiser();
-        return dh.Deserialise("Gus");
+    public user RetrieveUser(String userName){
+        Deserialiser des = new Deserialiser();
+        return des.DeserialiseUser(userName);
     }
 }

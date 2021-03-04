@@ -1,6 +1,8 @@
 package BusinessLogicLayer.Handlers;
 
-import DataAccessLayer.user;
+import java.io.File;
+
+import DataAccessLayer.DataObjets.*;
 
 //Handles Logins and Registrations
 public class AccountHandler {
@@ -28,27 +30,45 @@ public class AccountHandler {
     }
 
     public boolean Register(){
-        //Get users to authenticate if they already exists (Username)
+        //use try to see if we can retrieve a user
+        // if (ValidateUsername(username)) {
+        //     return false;
+        // }
+        // else {
+            StorageHandler sHandler = new StorageHandler();
+            user user = new user(name, surname, phone, email, username, password);
 
-        System.out.println(name + surname + phone + email + password + username);//Test
-        return false;
+            sHandler.StoreUser(user);
+            return true;
+        //}
     }
 
     public boolean LoginAuth(){
         boolean flag = false;
-        //Access DataHandler here to retrieve user info.
 
-        if (password == "admin" && username == "admin"){
+        //Access DataHandler here to retrieve user info.
+        StorageHandler sHandler = new StorageHandler();
+        user user = sHandler.RetrieveUser(username);
+
+        if (password.equals(user.getPassword()) && username.equals(user.getUsername())){
             flag = true;    
         }
+        else flag = false;
+
+        //Close on heap
+        sHandler = null;
 
         return flag;
     }
 
-    public user getUser(int ID){
+    public boolean ValidateUsername(String username){
+        boolean flag = false;
+        File file = new File(System.getProperty("user.dir") + "\\SerialisedObjects\\" + username + ".ser");
 
-        return null;
+        if (!file.exists()) {
+            flag = false;
+        }else flag = true;
+
+        return flag;
     }
-
-
 }

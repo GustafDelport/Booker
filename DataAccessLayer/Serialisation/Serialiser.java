@@ -4,9 +4,10 @@ import java.io.*;
 import DataAccessLayer.DataObjets.user;
 
 public class Serialiser {
-    public void Serialise(user user){
+
+    public void SerialiseUser(user user){
         try {
-            String username = user.getUsername(); 
+            String username = user.getUsername();
             
             FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\" + username + ".ser");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
