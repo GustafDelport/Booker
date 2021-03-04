@@ -7,9 +7,9 @@ public class AccountHandler {
     private String name;
     private String surname;
     private String phone;
-    private String email;
     private String password;
     private String username;
+    private String email;
 
     //Called when we want to Login
     public AccountHandler(String Password, String Username){
