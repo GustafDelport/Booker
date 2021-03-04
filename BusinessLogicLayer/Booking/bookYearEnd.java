@@ -1,8 +1,8 @@
 package BusinessLogicLayer.Booking;
 
-import BusinessLogicLayer.Handlers.BookingHandler;
+import BusinessLogicLayer.Handlers.*;
 
-public class bookYearEnd implements BookingHandler {
+public class bookYearEnd implements BookingInterface {
 
     @Override
     public void MakeBooking() {

@@ -23,5 +23,23 @@ public class Deserialiser {
         }
         return user;
     }
+
+    public bookings DeserialiseBooking(String bookingID) {
+        bookings booking = new bookings();
+
+        try {
+            FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\" + bookingID + ".ser");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            booking = (bookings)ois.readObject();
+
+            fis.close();
+            ois.close();
+
+        } catch (Exception mes) {
+            System.out.println(mes);
+        }
+        return booking;
+    }
 }
 

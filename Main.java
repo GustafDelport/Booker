@@ -61,7 +61,7 @@ public class Main {
                 switch (menuOpt) {
                     case 1:
                         {
-                            //View Bookings
+                            StorageHandler sHandler = new StorageHandler();
                         }
                         break;
                     case 2:

@@ -1,8 +1,6 @@
 package DataAccessLayer.DataObjets;
 
 import java.sql.Date;
-import java.util.Collections;
-import java.util.List;
 
 public class bookings {
     private String bookingID;
@@ -20,15 +18,35 @@ public class bookings {
 
     public bookings(){}
 
-    public List<bookings> GetBookings(){
-
-        // Temporary - used instead of "null"
-        return Collections.emptyList();
+    public String getBookingID() {
+        return bookingID;
     }
 
-    //LOL
-    public void IgnoreMe(){
-        System.out.println(bookingID + clientUsername + date + status);
+    public void setBookingID(String bookingID) {
+        this.bookingID = bookingID;
     }
 
+    public String getClientUsername() {
+        return clientUsername;
+    }
+
+    public void setClientUsername(String clientUsername) {
+        this.clientUsername = clientUsername;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 }

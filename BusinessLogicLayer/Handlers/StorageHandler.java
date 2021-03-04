@@ -15,12 +15,13 @@ public class StorageHandler{
         return des.DeserialiseUser(userName);
     }
 
-    public void StoreBooking(){
-        
+    public void StoreBooking(bookings booking){
+        Serialiser s = new Serialiser();
+        s.SerialiseBooking(booking);
     }
 
-    public bookings RetrieveBooking(){
-
-        return null;
+    public bookings RetrieveBooking(String bookingID){
+        Deserialiser des = new Deserialiser();
+        return des.DeserialiseBooking(bookingID);
     }
 }

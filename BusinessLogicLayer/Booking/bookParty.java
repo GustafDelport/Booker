@@ -1,8 +1,8 @@
 package BusinessLogicLayer.Booking;
 
-import BusinessLogicLayer.Handlers.BookingHandler;
+import BusinessLogicLayer.Handlers.*;
 
-public class bookParty implements BookingHandler {
+public class bookParty implements BookingInterface {
 
     @Override
     public void MakeBooking() {

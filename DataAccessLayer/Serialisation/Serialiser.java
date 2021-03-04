@@ -1,6 +1,8 @@
 package DataAccessLayer.Serialisation;
 
 import java.io.*;
+
+import DataAccessLayer.DataObjets.bookings;
 import DataAccessLayer.DataObjets.user;
 
 public class Serialiser{
@@ -13,6 +15,24 @@ public class Serialiser{
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
             oos.writeObject(user);
+            oos.reset();
+
+            oos.close();
+            fos.close();
+        } 
+        catch (Exception mes) {
+            System.out.println("Error" + mes);
+        }
+    }
+
+    public void SerialiseBooking(bookings booking){
+        try {
+            String bookingID = booking.getBookingID();
+            
+            FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\" + bookingID + ".ser");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            oos.writeObject(booking);
             oos.reset();
 
             oos.close();
