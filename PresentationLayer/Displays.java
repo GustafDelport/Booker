@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-import BusinessLogicLayer.AccountHandler;
-
 public class Displays {
 
     public String[] LoginDisplay(){
@@ -51,33 +48,8 @@ public class Displays {
         return a;
     }
 
-    public boolean RegisterMenu(){
+    public List<String> RegisterMenu(){
         clrscr();
-
-        boolean flag = false;
-        List<String> list = RegisterQuickDisplay();
-
-        //Create a new instance of a user template that is going to be stored
-        AccountHandler AH = new AccountHandler(list.get(0), list.get(1),list.get(2), list.get(3), list.get(4), list.get(5));
-
-        while (!flag) {
-            if (AH.Register()) {
-                flag = true;
-            }
-            else {
-                list = RegisterQuickDisplay();
-                AH = new AccountHandler(list.get(0), list.get(1),list.get(2), list.get(3), list.get(4), list.get(5));
-            }
-        }
-
-        System.out.println("====== Welcome to Booker ======");
-        System.out.println("Username : " + list.get(4));
-        System.out.println("====== Welcome to Booker ======");
-        AH = null;
-        return flag;
-    }
-
-    public List<String> RegisterQuickDisplay(){
         List<String> list = new ArrayList<>();
 
         Scanner iScanner = new Scanner(System.in);

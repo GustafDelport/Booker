@@ -1,5 +1,7 @@
 package PresentationLayer;
 
+import java.util.List;
+
 import BusinessLogicLayer.AccountHandler;
 
 public class Home {
@@ -29,7 +31,16 @@ public class Home {
                 break;
             case 2:
                 {
-                    displays.RegisterMenu();
+                    while (!register) {
+                        List<String> list = displays.RegisterMenu();
+                        AccountHandler AH = new AccountHandler(list.get(0), list.get(1),list.get(2), list.get(3), list.get(4), list.get(5));
+                        
+                        register = AH.Register();
+
+                        AH = null;
+                    }
+
+                    //DO Current user passing
                 }
                 break;
             default:
