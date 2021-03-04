@@ -50,7 +50,7 @@ public class Home {
 
         //Booking displays
         //#region 
-
+        
 
         //#endregion
     }
