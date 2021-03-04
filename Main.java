@@ -1,5 +1,4 @@
 import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.List;
 import BusinessLogicLayer.Handlers.*;
 import PresentationLayer.Displays;
@@ -56,7 +55,7 @@ public class Main {
         //#region 
         
         while (run) {
-            Displays.clrscr();
+            //Displays.clrscr();
 
             if (admin) {
                 menuOpt = displays.AdminMenu();
@@ -64,10 +63,13 @@ public class Main {
                     case 1:
                         {
                             //SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
-                            Date date = new Date(System.currentTimeMillis());
-    
-                            BookingHandler bHandler = new BookingHandler("Jan", date, "Wedding", 50);
-                            bHandler.MakeBooking();
+                            //Date date = new Date(System.currentTimeMillis());
+                            
+                            //Get user input from displays
+                            // BookingHandler bHandler = new BookingHandler("Jan", date, "Wedding", 50);
+                            // bHandler.MakeBooking();
+
+                            
                             
                         }
                         break;
@@ -87,7 +89,6 @@ public class Main {
                         }
                         break;
                 }
-                Displays.clrscr();
             }
             else{
                 menuOpt = displays.ClientMenu();

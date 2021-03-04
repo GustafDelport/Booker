@@ -1,8 +1,10 @@
 package DataAccessLayer.DataObjets;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class bookings {
+public class bookings implements Serializable{
+    private static final long serialVersionUID = 1L;
     private String bookingID;
     private String clientUsername;
     private String type;

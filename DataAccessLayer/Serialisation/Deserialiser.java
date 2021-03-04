@@ -10,7 +10,7 @@ public class Deserialiser {
         user user = new user();
 
         try {
-            FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\ClientsData" + username + ".ser");
+            FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\ClientsData\\" + username + ".ser");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
             user = (user)ois.readObject();
@@ -28,7 +28,7 @@ public class Deserialiser {
         bookings booking = new bookings();
     
         try {
-            FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\BookingData\\" + cName + bookingID + ".ser");
+            FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\BookingData\\" + cName + "_" + bookingID + ".ser");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
             booking = (bookings)ois.readObject();

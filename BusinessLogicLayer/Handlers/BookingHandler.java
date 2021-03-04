@@ -1,6 +1,8 @@
 package BusinessLogicLayer.Handlers;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import BusinessLogicLayer.Booking.bookBaptism;
 import BusinessLogicLayer.Booking.bookBirthDay;
@@ -58,5 +60,16 @@ public class BookingHandler {
                 
                 break;
         }
+    }
+
+    public List<String> ViewBookings(){
+        List<String> list = new ArrayList<>();
+        StorageHandler sHandler = new StorageHandler();
+        
+        bookings b = sHandler.RetrieveBooking(bookingID, clientUsername);
+
+        list.add(b.getBookingID() + " " + b.getClientUsername());
+
+        return list;
     }
 }
