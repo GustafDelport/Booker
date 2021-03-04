@@ -1,4 +1,4 @@
-package BusinessLogicLayer;
+package BusinessLogicLayer.Handlers;
 
 import DataAccessLayer.*;
 

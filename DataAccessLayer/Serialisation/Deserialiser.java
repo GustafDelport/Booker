@@ -1,6 +1,8 @@
-package DataAccessLayer;
+package DataAccessLayer.Serialisation;
 
 import java.io.*;
+
+import DataAccessLayer.user;
 
 public class Deserialiser {
     
