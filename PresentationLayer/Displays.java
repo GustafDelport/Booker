@@ -86,7 +86,7 @@ public class Displays {
 
     public int ClientMenu(){
         System.out.println("============ Booker ============");
-        System.out.println("Menu Items\n1 - View Booking\n2 - Make Booking\n3 - Edit Bookings");
+        System.out.println("Menu Items\n1 - View Booking\n2 - Make Booking\n3 - Edit Booking");
         System.out.println("================================"); 
 
         //Validate anwser either 1 or 2 or 3 or 4
@@ -96,6 +96,25 @@ public class Displays {
             //flag = true;
         }
         else System.out.println("That was not a valid input");
+        return a;
+    }
+
+    public int EditBookingMenu(){
+        boolean flag = true;
+        int a = 0;
+
+        while (flag) {
+            clrscr();
+            System.out.println("============ Make Booking ============");
+            System.out.println("Booking Options \n1 - Edit Date\n2 - Edit Number Of People\n3 - Delete Booking");
+            System.out.println("======================================");
+            a = iScanner.nextInt();
+
+            if (a == 1 || a == 2 || a == 3) {
+                flag = false;
+            }
+            else flag = true;
+        }
         return a;
     }
 
@@ -149,6 +168,16 @@ public class Displays {
         }
         
         return type;
+    }
+
+    public String NewDate(){
+        System.out.println("\nPlease Enter The New Date : <DD/MM/YY>");
+        return iScanner.next();
+    }
+
+    public int NewPrice(){
+        System.out.println("\nPlease Enter The New Number Of People : ");
+        return iScanner.nextInt();
     }
 
     public static void clrscr(){

@@ -24,5 +24,16 @@ public class bookParty implements BookingInterface {
         StorageHandler sHandler = new StorageHandler();
         sHandler.StoreBooking(booking);
     }
-    
+
+    @Override
+    public bookings EditPrice(bookings booking) {
+        bookings b = booking;
+        
+        if (booking.getNumberOfPeople() >= 40) {
+            booking.setPrice((pricePerPerson * booking.getNumberOfPeople())*0.85);        
+        }
+        else booking.setPrice((pricePerPerson * booking.getNumberOfPeople()));
+
+        return b;
+    }
 }
