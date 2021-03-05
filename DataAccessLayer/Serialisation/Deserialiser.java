@@ -1,6 +1,8 @@
 package DataAccessLayer.Serialisation;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import DataAccessLayer.DataObjets.*;
 
@@ -40,6 +42,25 @@ public class Deserialiser {
             booking = null;
         }
         return booking;
+    }
+
+    public List<String> DeserialiseNotification(){
+        List<String> list = new ArrayList<String>();
+
+        try {
+            FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\AdminFiles\\" + "Notifications.ser");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            list = (List<String>)ois.readObject();
+            
+            fis.close();
+            ois.close();
+        } 
+        catch (Exception mes) {
+            System.out.println("Error" + mes);
+        }
+
+        return list;
     }
 }
 

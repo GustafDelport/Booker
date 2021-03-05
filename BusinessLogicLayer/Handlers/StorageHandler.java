@@ -1,5 +1,6 @@
 package BusinessLogicLayer.Handlers;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -64,5 +65,29 @@ public class StorageHandler {
             n++;    
         }
         return lStrings;
+    }
+
+    //Status  : "Non" / "Con"
+
+    public List<String> RetrieveStatusBookings(String Status){
+
+        List<bookings> bookings = new ArrayList<bookings>();
+        List<String> aList = new ArrayList<String>();
+
+        File file = new File(System.getProperty("user.dir") + "\\SerialisedObjects\\BookingData\\");
+        File[] listOfFiles = file.listFiles();
+
+        for (File item : listOfFiles) {
+            bookings.add(RetrieveBooking(item.getName()));
+        }
+
+        for (bookings item : bookings) {
+            if (item.getStatus().equals(Status)){
+                String line = String.format("ID: %s\nUsername: %S\nDate: %s\nType: %s\nStatus: %s\n", item.getBookingID(),item.getClientUsername(),item.getDate(),item.getType(),item.getStatus());
+                aList.add(line);
+            }
+        }
+
+        return aList;
     }
 }

@@ -9,6 +9,8 @@ import BusinessLogicLayer.Booking.bookParty;
 import BusinessLogicLayer.Booking.bookWedding;
 import BusinessLogicLayer.Booking.bookYearEnd;
 import DataAccessLayer.DataObjets.bookings;
+import DataAccessLayer.Serialisation.Deserialiser;
+import DataAccessLayer.Serialisation.Serialiser;
 
 public class BookingHandler {
     private String bookingID;
@@ -35,6 +37,15 @@ public class BookingHandler {
     public void MakeBooking(String username) {
 
         bookings booking = new bookings(bookingID, username, status, date, type, numberOfPeople, food, decorations);
+
+        //Make a notification
+        String line = String.format("%s,%s,%s,%s",bookingID,username,date,type);
+
+        NotificationHandler nHandler = new NotificationHandler();
+        List<String> nList = nHandler.GetNotifications();
+        
+        nList.add(line);
+        nHandler.PushNotifications(nList);
 
         switch (type) {
             case "Baptism": {
@@ -161,5 +172,24 @@ public class BookingHandler {
             message = "Your Booking Has Been Deleted";
         }
         return message;
+    }
+
+    public String UpdateStatus(String username){
+
+        Deserialiser des = new Deserialiser();
+        bookings b = des.DeserialiseBooking(username);
+        
+        b.setStatus("Approved");
+        Serialiser ser = new Serialiser();
+
+        ser.SerialiseBooking(b);
+
+        String message = "\nApproved Booking\n";
+        return message;
+    }
+
+    public List<String> ViewBookingsByStatus(String Status){
+        StorageHandler sHandler = new StorageHandler();
+        return sHandler.RetrieveStatusBookings(Status);
     }
 }
