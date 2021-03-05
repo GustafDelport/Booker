@@ -1,7 +1,5 @@
 package BusinessLogicLayer.Handlers;
 
-import java.util.List;
-
 import DataAccessLayer.DataObjets.*;
 import DataAccessLayer.Serialisation.*;
 
@@ -22,7 +20,7 @@ public class StorageHandler{
         s.SerialiseBooking(booking);
     }
 
-    public List<bookings> RetrieveBooking(String cName){
+    public bookings RetrieveBooking(String cName){
         Deserialiser des = new Deserialiser();
         return des.DeserialiseBooking(cName);
         

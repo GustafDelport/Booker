@@ -2,6 +2,7 @@ package BusinessLogicLayer.Handlers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import BusinessLogicLayer.Booking.bookBaptism;
 import BusinessLogicLayer.Booking.bookBirthDay;
@@ -67,13 +68,15 @@ public class BookingHandler {
         List<String> list = new ArrayList<>();
         StorageHandler sHandler = new StorageHandler();
 
-        List<bookings> lBookings = sHandler.RetrieveBooking(username);
+        bookings b = sHandler.RetrieveBooking(username);
 
-        for (bookings b : lBookings) {
-            String line = String.format("Booking ID: %s || Type: %s || Price: %f || Date: %s ||", b.getBookingID(),b.getType(),b.getPrice(),b.getDate());
+        if (Objects.isNull(b)) {
+            list.add("You Dont Have Any Bookings");
+        }
+        else{
+            String line = String.format("Booking ID: \t%s \nType: \t%s \nPrice: \t%f \nDate: \t%s \nStatus: \t%s", b.getBookingID(),b.getType(),b.getPrice(),b.getDate(),b.getStatus());
             list.add(line);
         }
-
         return list;
     }
 }

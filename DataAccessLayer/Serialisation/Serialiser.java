@@ -1,7 +1,6 @@
 package DataAccessLayer.Serialisation;
 
 import java.io.*;
-import java.util.*;
 
 import DataAccessLayer.DataObjets.bookings;
 import DataAccessLayer.DataObjets.user;
@@ -30,22 +29,11 @@ public class Serialiser {
         try {
             String cName = booking.getClientUsername();
 
-            List<bookings> lBookings = new Deserialiser().DeserialiseBooking(cName);
-
             FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\BookingData\\" + cName + ".ser");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-            if (!lBookings.isEmpty()) {
-                for (bookings item : lBookings) {
-                    oos.writeObject(item);
-                    oos.reset();
-                }
-            }
-            else
-            {
-                oos.writeObject(booking);
-                oos.reset();
-            }
+            oos.writeObject(booking);
+            oos.reset();
             
             oos.close();
             fos.close();

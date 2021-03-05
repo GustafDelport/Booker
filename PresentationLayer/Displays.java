@@ -86,7 +86,7 @@ public class Displays {
 
     public int ClientMenu(){
         System.out.println("============ Booker ============");
-        System.out.println("Menu Items\n1 - View Bookings\n2 - Make Booking\n3 - Edit Bookings");
+        System.out.println("Menu Items\n1 - View Booking\n2 - Make Booking\n3 - Edit Bookings");
         System.out.println("================================"); 
 
         //Validate anwser either 1 or 2 or 3 or 4
