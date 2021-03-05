@@ -25,4 +25,4 @@ This is a joint project between team mates for a fictional business "Delicious-C
     - Menu
     - Decorations
 
-![detailed UML design](https://github.com/GustafDelport/Booker/blob/Master/Old/Booker%20UML%20Design.jpg)
+![detailed UML design](https://github.com/GustafDelport/Booker/blob/Master/Booker%20UML%20Design.jpg)
