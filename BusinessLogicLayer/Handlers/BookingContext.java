@@ -15,4 +15,8 @@ public class BookingContext {
         bInterface.MakeBooking(booking);
     }
 
+    public void ExecuteTwo(bookings booking){
+        bInterface.EditPrice(booking);
+    }
+
 }

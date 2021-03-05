@@ -6,4 +6,5 @@ import DataAccessLayer.DataObjets.bookings;
 public interface BookingInterface {
     public String type = "Booking";
     public void MakeBooking(bookings booking);
+    public bookings EditPrice(bookings booking);
 }

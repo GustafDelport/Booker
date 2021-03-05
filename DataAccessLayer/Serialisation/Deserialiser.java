@@ -24,11 +24,10 @@ public class Deserialiser {
         return user;
     }
 
-    public bookings DeserialiseBooking(String bookingID, String cName) {
+    public bookings DeserialiseBooking(String cName) {
         bookings booking = new bookings();
-    
         try {
-            FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\BookingData\\" + cName + "_" + bookingID + ".ser");
+            FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\BookingData\\" + cName +".ser");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
             booking = (bookings)ois.readObject();
@@ -37,7 +36,8 @@ public class Deserialiser {
             ois.close();
 
         } catch (Exception mes) {
-            System.out.println(mes);
+            //System.out.println(mes);
+            booking = null;
         }
         return booking;
     }

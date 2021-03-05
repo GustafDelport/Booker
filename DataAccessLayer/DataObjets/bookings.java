@@ -1,7 +1,6 @@
 package DataAccessLayer.DataObjets;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 public class bookings implements Serializable{
     private static final long serialVersionUID = 1L;
@@ -10,10 +9,10 @@ public class bookings implements Serializable{
     private String type;
     private String status;
     private int numberOfPeople;
-    private Date date;
+    private String date;
     private double price;
 
-    public bookings(String bookingID, String clientUsername, String status, Date date, String Type,int numberOfPeople) {
+    public bookings(String bookingID, String clientUsername, String status, String date, String Type,int numberOfPeople) {
         this.bookingID = bookingID;
         this.clientUsername = clientUsername;
         this.status = status;
@@ -73,11 +72,11 @@ public class bookings implements Serializable{
         this.status = status;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }
