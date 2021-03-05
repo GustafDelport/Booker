@@ -8,6 +8,7 @@ public class Main {
         Displays displays = new Displays();
         boolean login = false, register = false, admin = false, run = true;
         int menuOpt;
+        String username = "";
         //#endregion
 
         //Login and register part
@@ -22,7 +23,8 @@ public class Main {
                         AccountHandler AH = new AccountHandler(userInfo[0], userInfo[1]);
                         login = AH.LoginAuth();
                         admin = AH.ValidateRole();
-                        
+
+                        username = userInfo[0];
                         //We want to clear instance to save memory i use null because garbage collector will delete it
                         AH = null;
                     }
@@ -40,6 +42,7 @@ public class Main {
 
                         register = AH.Register();
                         System.out.println("The username is taken");
+                        username = list.get(0);
                         AH = null;
                     }
                     Displays.clrscr();
@@ -95,16 +98,27 @@ public class Main {
                     case 1:
                         {
                             //View Bookings
+                            BookingHandler bHandler = new BookingHandler();
+                            List<String> lBookings = bHandler.ViewBookings(username);
+
+                            for (String string : lBookings) {
+                                System.out.println(string);
+                            }
                         }
                         break;
                     case 2:
                         {
                             //Make Booking
+                            List<String> lStrings = displays.BookingMenu();
+                            BookingHandler bHandler = new BookingHandler(lStrings.get(0), lStrings.get(1), lStrings.get(2), Integer.parseInt(lStrings.get(3)));
+
+                            bHandler.MakeBooking(username);
                         }
                         break;
                     case 3:
                         {
                             //Edit Booking
+
                         }
                         break;
                     case 4:
@@ -113,7 +127,6 @@ public class Main {
                         }
                         break;
                 }
-                Displays.clrscr();
             }
         }
         

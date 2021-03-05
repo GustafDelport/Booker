@@ -17,7 +17,7 @@ public class bookBirthDay implements BookingInterface {
         booking.setBookingID(bID);
 
         if (booking.getNumberOfPeople() >= 40) {
-            booking.setPrice((pricePerPerson * booking.getPrice())*0.85);
+            booking.setPrice((pricePerPerson * booking.getNumberOfPeople())*0.85);
         }
         
         StorageHandler sHandler = new StorageHandler();

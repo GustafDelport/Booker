@@ -1,6 +1,8 @@
 package DataAccessLayer.Serialisation;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import DataAccessLayer.DataObjets.*;
 
@@ -24,14 +26,17 @@ public class Deserialiser {
         return user;
     }
 
-    public bookings DeserialiseBooking(String bookingID, String cName) {
-        bookings booking = new bookings();
+    public List<bookings> DeserialiseBooking(String cName) {
+        List<bookings> lBookings = new ArrayList<bookings>();
     
         try {
-            FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\BookingData\\" + cName + "_" + bookingID + ".ser");
+            FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\BookingData\\" + cName +".ser");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            booking = (bookings)ois.readObject();
+            while (fis.available() != -1) {
+                bookings booking = (bookings)ois.readObject();//Casting as bookings Object
+                lBookings.add(booking);
+            }
 
             fis.close();
             ois.close();
@@ -39,7 +44,7 @@ public class Deserialiser {
         } catch (Exception mes) {
             System.out.println(mes);
         }
-        return booking;
+        return lBookings;
     }
 }
 

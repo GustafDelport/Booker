@@ -1,6 +1,5 @@
 package BusinessLogicLayer.Handlers;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,9 +15,9 @@ public class BookingHandler {
     private String type;
     private String status;
     private int numberOfPeople;
-    private Date date;
+    private String date;
 
-    public BookingHandler(String clientUsername, Date date, String type, int numberOfPeople) {
+    public BookingHandler(String clientUsername, String date, String type, int numberOfPeople) {
         this.clientUsername = clientUsername;
         this.date = date;
         this.type = type;
@@ -27,9 +26,9 @@ public class BookingHandler {
 
     public BookingHandler() {}
 
-    public void MakeBooking(){
+    public void MakeBooking(String username){
         
-        bookings booking = new bookings(bookingID, clientUsername, status, date, type, numberOfPeople);
+        bookings booking = new bookings(bookingID, username, status, date, type, numberOfPeople);
 
         switch (type) {
             case "Baptism":
@@ -56,20 +55,25 @@ public class BookingHandler {
                     ctx.Execute(booking);
                 }
                 break;
-            case "Tear End":
+            case "Year-End":
                 
                 break;
         }
     }
 
     //One implement that why its not part of the interface
-    public List<String> ViewBookings(){
+    public List<String> ViewBookings(String username){
+
         List<String> list = new ArrayList<>();
         StorageHandler sHandler = new StorageHandler();
 
-        bookings b = sHandler.RetrieveBooking(bookingID, clientUsername);
+        List<bookings> lBookings = sHandler.RetrieveBooking(username);
 
-        list.add(b.getBookingID() + " " + b.getClientUsername());
+        for (bookings b : lBookings) {
+            String line = String.format("Booking ID: %s || Type: %s || Price: %f || Date: %s ||", b.getBookingID(),b.getType(),b.getPrice(),b.getDate());
+            list.add(line);
+        }
+
         return list;
     }
 }

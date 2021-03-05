@@ -1,5 +1,7 @@
 package BusinessLogicLayer.Handlers;
 
+import java.util.List;
+
 import DataAccessLayer.DataObjets.*;
 import DataAccessLayer.Serialisation.*;
 
@@ -20,11 +22,10 @@ public class StorageHandler{
         s.SerialiseBooking(booking);
     }
 
-    public bookings RetrieveBooking(String bookingID, String cName){
+    public List<bookings> RetrieveBooking(String cName){
         Deserialiser des = new Deserialiser();
-        return des.DeserialiseBooking(bookingID,cName);
-
-
+        return des.DeserialiseBooking(cName);
+        
         // NOTE try saving all bookings of a person in a list of bookings and read through list and save it as their username.ser
     }
 }

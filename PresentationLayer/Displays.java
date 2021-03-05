@@ -1,12 +1,7 @@
 package PresentationLayer;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
-
+import java.util.*;
 public class Displays {
 
     Scanner iScanner = new Scanner(System.in);
@@ -106,9 +101,56 @@ public class Displays {
 
     public List<String> BookingMenu(){
         //Questions and stuff
+        List<String> lStrings = new ArrayList<>();
         
-        return Collections.emptyList();
+        System.out.println("============ Make Booking ============");
+
+        System.out.println("Enter Name: ");
+        lStrings.add(iScanner.next());
+
+        System.out.println("Enter Date: <DD/MM/YYYY>");
+        lStrings.add(iScanner.next());
+
+        System.out.println("\nType of Event?\nChoose One");
+        lStrings.add(BookingTypes());
+
+        System.out.println("Enter number of people at event: ");
+        lStrings.add(iScanner.next());
+
+        System.out.println("======================================");
+        
+        return lStrings;
     }
+
+    public String BookingTypes(){
+
+        System.out.println("1 - Baptism\n2 - Birthday\n3 - Party\n4 - Wedding\n5 - Year-End");
+        String type = "";
+
+        switch (iScanner.nextInt()) {
+            case 1:
+                type = "Baptism";
+                break;
+            case 2:
+                type = "Birthday";
+                break;
+            case 3:
+                type = "Party";
+                break;
+            case 4:
+                type = "Wedding";
+                break;
+            case 5:
+                type = "Year-End";
+                break;
+        
+            default:
+                break;
+        }
+        
+        return type;
+    }
+
     public static void clrscr(){
         //Clears Screen in java
         try {
