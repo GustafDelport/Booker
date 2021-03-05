@@ -11,14 +11,14 @@ import DataAccessLayer.DataObjets.bookings;
 
 public class BookingHandler {
     private String bookingID;
-    private String clientUsername;
+    private String username;
     private String type;
     private String status;
     private int numberOfPeople;
     private String date;
 
-    public BookingHandler(String clientUsername, String date, String type, int numberOfPeople) {
-        this.clientUsername = clientUsername;
+    public BookingHandler(String Username, String date, String type, int numberOfPeople) {
+        this.username = Username;
         this.date = date;
         this.type = type;
         this.numberOfPeople = numberOfPeople;

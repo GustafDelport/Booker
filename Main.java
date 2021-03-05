@@ -9,6 +9,8 @@ public class Main {
         boolean login = false, register = false, admin = false, run = true;
         int menuOpt;
         String username = "";
+
+        BookingHandler bHandler = new BookingHandler();
         //#endregion
 
         //Login and register part
@@ -43,6 +45,7 @@ public class Main {
                         register = AH.Register();
                         System.out.println("The username is taken");
                         username = list.get(0);
+                        
                         AH = null;
                     }
                     Displays.clrscr();
@@ -98,7 +101,6 @@ public class Main {
                     case 1:
                         {
                             //View Bookings
-                            BookingHandler bHandler = new BookingHandler();
                             List<String> lBookings = bHandler.ViewBookings(username);
 
                             for (String string : lBookings) {
@@ -110,7 +112,7 @@ public class Main {
                         {
                             //Make Booking
                             List<String> lStrings = displays.BookingMenu();
-                            BookingHandler bHandler = new BookingHandler(lStrings.get(0), lStrings.get(1), lStrings.get(2), Integer.parseInt(lStrings.get(3)));
+                            bHandler = new BookingHandler(lStrings.get(0), lStrings.get(1), lStrings.get(2), Integer.parseInt(lStrings.get(3)));
 
                             bHandler.MakeBooking(username);
                         }

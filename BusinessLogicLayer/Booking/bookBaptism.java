@@ -17,7 +17,9 @@ public class bookBaptism implements BookingInterface {
         booking.setBookingID(bID);
 
         if (booking.getNumberOfPeople() >= 40) {
-            booking.setPrice((pricePerPerson * booking.getNumberOfPeople())*0.85);        }
+            booking.setPrice((pricePerPerson * booking.getNumberOfPeople())*0.85);        
+        }
+        else booking.setPrice((pricePerPerson * booking.getNumberOfPeople()));
 
         StorageHandler sHandler = new StorageHandler();
         sHandler.StoreBooking(booking);
