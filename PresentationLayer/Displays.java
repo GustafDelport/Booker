@@ -1,7 +1,11 @@
 package PresentationLayer;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
+
+import BusinessLogicLayer.Handlers.StorageHandler;
+
 public class Displays {
 
     Scanner iScanner = new Scanner(System.in);
@@ -15,12 +19,12 @@ public class Displays {
 
         System.out.println("\n");
 
-        String[] userInfo = {userName,password};
+        String[] userInfo = { userName, password };
 
         return userInfo;
     }
 
-    public int initialMenu(){
+    public int initialMenu() {
         clrscr();
 
         boolean flag = false;
@@ -29,25 +33,25 @@ public class Displays {
         while (!flag) {
             System.out.println("====== Welcome to Booker ======");
             System.out.println("Already a user ?\n1 - Yes\n2 - No");
-            System.out.println("==============================="); 
-            //Validate anwser either 1 or 2
+            System.out.println("===============================");
+            // Validate anwser either 1 or 2
             a = iScanner.nextInt();
 
             if (a == 1 || a == 2) {
                 flag = true;
-            }
-            else System.out.println("That was not a valid input");
-            
+            } else
+                System.out.println("That was not a valid input");
+
         }
         return a;
     }
 
-    public List<String> RegisterMenu(){
+    public List<String> RegisterMenu() {
         List<String> list = new ArrayList<>();
-    
+
         System.out.println("Enter Name: ");
         list.add(iScanner.next());
-            
+
         System.out.println("Enter Surname: ");
         list.add(iScanner.next());
 
@@ -59,7 +63,7 @@ public class Displays {
 
         System.out.println("Enter Username: ");
         list.add(iScanner.next());
-            
+
         System.out.println("Enter Password: ");
         list.add(iScanner.next());
 
@@ -68,38 +72,38 @@ public class Displays {
         return list;
     }
 
-    public int AdminMenu(){
+    public int AdminMenu() {
 
         System.out.println("============ Booker ============");
-        System.out.println("Menu Items\n1 - View Bookings\n2 - Confirm Bookings\n3 - Notifications");
-        System.out.println("================================"); 
+        System.out.println("Menu Items\n1 - Confirm Bookings\n2 - Notifications");
+        System.out.println("================================");
 
-        //Validate anwser either 1 or 2 or 3 or 4
+        // Validate anwser either 1 or 2 or 3 or 4
         int a = iScanner.nextInt();
 
-        if (a == 1 || a == 2 || a == 3 || a == 4) {
-            //flag = true;
-        }
-        else System.out.println("That was not a valid input");
+        if (a == 1 || a == 2 || a == 3) {
+            // flag = true;
+        } else
+            System.out.println("That was not a valid input");
         return a;
     }
 
-    public int ClientMenu(){
+    public int ClientMenu() {
         System.out.println("============ Booker ============");
         System.out.println("Menu Items\n1 - View Booking\n2 - Make Booking\n3 - Edit Booking");
-        System.out.println("================================"); 
+        System.out.println("================================");
 
-        //Validate anwser either 1 or 2 or 3 or 4
+        // Validate anwser either 1 or 2 or 3 or 4
         int a = iScanner.nextInt();
 
         if (a == 1 || a == 2 || a == 3 || a == 4) {
-            //flag = true;
-        }
-        else System.out.println("That was not a valid input");
+            // flag = true;
+        } else
+            System.out.println("That was not a valid input");
         return a;
     }
 
-    public int EditBookingMenu(){
+    public int EditBookingMenu() {
         boolean flag = true;
         int a = 0;
 
@@ -112,16 +116,16 @@ public class Displays {
 
             if (a == 1 || a == 2 || a == 3) {
                 flag = false;
-            }
-            else flag = true;
+            } else
+                flag = true;
         }
         return a;
     }
 
-    public List<String> BookingMenu(){
-        //Questions and stuff
+    public List<String> BookingMenu() {
+        // Questions and stuff
         List<String> lStrings = new ArrayList<>();
-        
+
         System.out.println("============ Make Booking ============");
 
         System.out.println("Enter Name: ");
@@ -137,11 +141,11 @@ public class Displays {
         lStrings.add(iScanner.next());
 
         System.out.println("======================================");
-        
+
         return lStrings;
     }
 
-    public String BookingTypes(){
+    public String BookingTypes() {
 
         System.out.println("1 - Baptism\n2 - Birthday\n3 - Party\n4 - Wedding\n5 - Year-End");
         String type = "";
@@ -162,12 +166,92 @@ public class Displays {
             case 5:
                 type = "Year-End";
                 break;
-        
+
             default:
                 break;
         }
-        
+
         return type;
+    }
+
+    public List<String> FoodMenu() throws FileNotFoundException {
+        List<String> sList = new ArrayList<>();
+        boolean flag = true;
+
+        while (flag) {
+            clrscr();
+            System.out.println("============ Choose Food ============");
+
+            List<String> foodRaw = new ArrayList<>();
+
+            StorageHandler sHandler = new StorageHandler();
+            foodRaw = sHandler.RetrieveFoodMenu();
+            
+            for (String string : foodRaw) {
+                System.out.println(string);
+            }
+
+            String line = "Item: ";
+
+            line += iScanner.next();
+
+            System.out.println("How much?");
+
+            line += "Amount: " + iScanner.next();
+
+            sList.add(line);
+            
+            System.out.println("\nWant to order More? \1 - Yes\2 - No");
+            int opt = iScanner.nextInt();
+
+            if (opt == 1) {
+                flag = true;
+            }
+            else flag = false;
+            System.out.println("=====================================");
+        }
+
+        return sList;
+    }
+
+    public List<String> DecoMenu() throws FileNotFoundException {
+        List<String> sList = new ArrayList<>();
+        boolean flag = true;
+
+        while (flag) {
+            clrscr();
+            System.out.println("============ Choose Decorations ============");
+
+            List<String> foodRaw = new ArrayList<>();
+
+            StorageHandler sHandler = new StorageHandler();
+            foodRaw = sHandler.RetrieveFoodMenu();
+            
+            for (String string : foodRaw) {
+                System.out.println(string);
+            }
+            
+            String line = "Item: ";
+
+            line += iScanner.next();
+
+            System.out.println("How much?");
+
+            line += "Amount: " + iScanner.next();
+
+            sList.add(line);
+            
+            System.out.println("\nWant to order More? \1 - Yes\2 - No");
+            int opt = iScanner.nextInt();
+
+            if (opt == 1) {
+                flag = true;
+            }
+            else flag = false;
+            System.out.println("===========================================");
+        }
+
+        return sList;
     }
 
     public String NewDate(){

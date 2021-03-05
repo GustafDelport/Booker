@@ -17,12 +17,16 @@ public class BookingHandler {
     private String status;
     private int numberOfPeople;
     private String date;
+    private List<String> food;
+    private List<String> decorations;
 
-    public BookingHandler(String Username, String date, String type, int numberOfPeople) {
+    public BookingHandler(String Username, String date, String type, int numberOfPeople, List<String> Food, List<String> Decorations){
         this.username = Username;
         this.date = date;
         this.type = type;
         this.numberOfPeople = numberOfPeople;
+        this.food = Food;
+        this.decorations = Decorations;
     }
 
     public BookingHandler() {
@@ -30,7 +34,7 @@ public class BookingHandler {
 
     public void MakeBooking(String username) {
 
-        bookings booking = new bookings(bookingID, username, status, date, type, numberOfPeople);
+        bookings booking = new bookings(bookingID, username, status, date, type, numberOfPeople, food, decorations);
 
         switch (type) {
             case "Baptism": {

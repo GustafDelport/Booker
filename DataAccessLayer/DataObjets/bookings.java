@@ -1,8 +1,9 @@
 package DataAccessLayer.DataObjets;
 
 import java.io.Serializable;
+import java.util.List;
 
-public class bookings implements Serializable{
+public class bookings implements Serializable {
     private static final long serialVersionUID = 1L;
     private String bookingID;
     private String clientUsername;
@@ -11,14 +12,34 @@ public class bookings implements Serializable{
     private int numberOfPeople;
     private String date;
     private double price;
+    private List<String> food;
+    private List<String> decorations;
 
-    public bookings(String bookingID, String clientUsername, String status, String date, String Type,int numberOfPeople) {
+    public bookings(String bookingID, String clientUsername, String status, String date, String Type,int numberOfPeople, List<String> Food, List<String> Decorations) {
         this.bookingID = bookingID;
         this.clientUsername = clientUsername;
         this.status = status;
         this.date = date;
         this.type = Type;
-        this.setNumberOfPeople(numberOfPeople);
+        this.numberOfPeople = numberOfPeople;
+        this.food = Food;
+        this.decorations = Decorations;
+    }
+
+    public List<String> getDecorations() {
+        return decorations;
+    }
+
+    public void setDecorations(List<String> decorations) {
+        this.decorations = decorations;
+    }
+
+    public List<String> getFood() {
+        return food;
+    }
+
+    public void setFood(List<String> food) {
+        this.food = food;
     }
 
     public double getPrice() {

@@ -69,20 +69,15 @@ public class Main {
                 switch (menuOpt) {
                     case 1:
                         {
-                            //
+                            //Confrim Bookings
                         }
                         break;
                     case 2:
                         {
-                            //Confrim Bookings
-                        }
-                        break;
-                    case 3:
-                        {
                             //Notifications
                         }
                         break;
-                    case 4:
+                    case 3:
                         {
                             System.exit(0);
                         }
@@ -108,7 +103,8 @@ public class Main {
                             Displays.clrscr();
                             //Make Booking
                             List<String> lStrings = displays.BookingMenu();
-                            bHandler = new BookingHandler(lStrings.get(0), lStrings.get(1), lStrings.get(2), Integer.parseInt(lStrings.get(3)));
+                            //0 = Name 1 = Date 2 = Type 3 = NoP
+                            bHandler = new BookingHandler(lStrings.get(0), lStrings.get(1), lStrings.get(2), Integer.parseInt(lStrings.get(3)) , displays.FoodMenu(), displays.DecoMenu());
 
                             bHandler.MakeBooking(username);
                         }

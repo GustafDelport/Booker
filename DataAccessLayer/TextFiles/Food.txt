@@ -1,0 +1,5 @@
+1,Soft Drinks,Drink,A refreshing 330ml can of joy
+2,Water,Drink,A Dose of nature finest
+3,Hamburger,Food,A sizzling 200g 100% Beef putty on a soft melting bun
+4,Chicken Sandwich,Food,Filled to the brim with wet creamy mayo
+5,More Coming Soon,Food,Be on the lookout for future updates
