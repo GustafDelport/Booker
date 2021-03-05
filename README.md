@@ -49,7 +49,7 @@ This is a joint project between team mates for a fictional business "Delicious-C
 The **Admin** login will allow certain actions and tasks that would've otherwise not possible, for example; The admin user can approve bookings and update the "pending" status of user bookings.
 
 ### Login
-**Username:** Admin
+**Username:** Admin<br>
 **Password:** 123
 
-![detailed UML design](https://github.com/GustafDelport/Booker/blob/Master/Booker%20UML%20Design.jpg)
+![detailed UML design](https://github.com/GustafDelport/Booker/blob/Master/Documentation/Booker%20UML%20Design.jpg)
