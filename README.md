@@ -4,25 +4,52 @@ This is a joint project between team mates for a fictional business "Delicious-C
 
 ## Layout
 ### BusinessLogicLayer
-- AccountHandler
-- Notification Handler
 - Booking
-    - BookingsHandler
-        - bookWedding
-        - bookBirthday
-        - bookYearEnd
-        - bookParty
-        - bookBaptism
+    - bookBaptism
+    - bookBirthDay
+    - bookParty
+    - bookWedding
+    - bookYearEnd
+- Handlers  
+    - AccountHandler
+    - BookingContext
+    - BookingHandler
+    - BookingInterface
+    - NotificationHandler
+    - StorageHandler
 
 ### DataAccessLayer
-- AccountDataHandler
-    - user
+- DataObjects
+    - Admin
     - bookings
-- BookingDataHandler
-    - bookings
-    - user
-- LogisticsDataHandler
-    - Menu
     - Decorations
+    - Menu
+    - user
+- Handlers
+    - LogisticsHandler
+- Serialisation
+    - Deserialiser
+    - Serialiser
+- TextFiles
+    - Decorations.txt
+    - Food.txt
+
+### PresentationLayer
+- Displays
+
+### SerialisedObjects
+- Adminfiles
+    - Stores all the notifications
+- BookingData
+    - Stores all booking data made by users
+- ClientData
+    - Stores all user data
+
+## Logins
+The **Admin** login will allow certain actions and tasks that would've otherwise not possible, for example; The admin user can approve bookings and update the "pending" status of user bookings.
+
+### Login
+**Username:** Admin
+**Password:** 123
 
 ![detailed UML design](https://github.com/GustafDelport/Booker/blob/Master/Booker%20UML%20Design.jpg)
