@@ -70,11 +70,11 @@ public class StorageHandler {
     //Status  : "Non" / "Con"
 
     public List<String> RetrieveStatusBookings(String Status){
-        
+
         List<bookings> bookings = new ArrayList<bookings>();
         List<String> aList = new ArrayList<String>();
 
-        File file = new File(System.getProperty("user.dir") + "SerialisedObjects\\BookingData\\");
+        File file = new File(System.getProperty("user.dir") + "\\SerialisedObjects\\BookingData\\");
         File[] listOfFiles = file.listFiles();
 
         for (File item : listOfFiles) {
