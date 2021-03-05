@@ -201,13 +201,14 @@ public class Displays {
 
             sList.add(line);
             
-            System.out.println("\nWant to order More? \1 - Yes\2 - No");
+            System.out.println("\nWant to order More? \n1 - Yes\n2 - No");
             int opt = iScanner.nextInt();
 
             if (opt == 1) {
                 flag = true;
             }
             else flag = false;
+
             System.out.println("=====================================");
         }
 
@@ -222,12 +223,12 @@ public class Displays {
             clrscr();
             System.out.println("============ Choose Decorations ============");
 
-            List<String> foodRaw = new ArrayList<>();
+            List<String> DecoRaw = new ArrayList<>();
 
             StorageHandler sHandler = new StorageHandler();
-            foodRaw = sHandler.RetrieveFoodMenu();
+            DecoRaw = sHandler.RetrieveDecorations();
             
-            for (String string : foodRaw) {
+            for (String string : DecoRaw) {
                 System.out.println(string);
             }
             
@@ -241,7 +242,7 @@ public class Displays {
 
             sList.add(line);
             
-            System.out.println("\nWant to order More? \1 - Yes\2 - No");
+            System.out.println("\nWant to order More? \n1 - Yes\n2 - No");
             int opt = iScanner.nextInt();
 
             if (opt == 1) {

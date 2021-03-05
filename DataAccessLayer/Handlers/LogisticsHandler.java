@@ -17,7 +17,7 @@ public class LogisticsHandler {
     public List<Menu> getFood() throws FileNotFoundException {
         List<Menu> mList = new ArrayList<Menu>();
 
-        File file = new File(System.getProperty("user.dir") + "\\DataAccessLayer\\TextFiles\\" +"Decorations.txt");
+        File file = new File(System.getProperty("user.dir") + "\\DataAccessLayer\\TextFiles\\" +"Food.txt");
 
         Scanner iScanner = new Scanner(file);
 

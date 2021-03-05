@@ -38,6 +38,9 @@ public class StorageHandler {
 
         LogisticsHandler lHandler = new LogisticsHandler();
         List<Menu> menus = lHandler.getFood();
+
+        System.out.println(menus.get(0).getFoodName());
+
         int n = 1;
 
         for (Menu item : menus) {
@@ -45,6 +48,21 @@ public class StorageHandler {
             lStrings.add(line);
             n++;    
         }
-        return null;
+        return lStrings;
+    }
+
+    public List<String> RetrieveDecorations() throws FileNotFoundException {
+        List<String> lStrings = new ArrayList<>();
+
+        LogisticsHandler lHandler = new LogisticsHandler();
+        List<Decorations> decorations = lHandler.getDecorations();
+        int n = 1;
+
+        for (Decorations item : decorations) {
+            String line = String.format("%d - %s",n ,item.getDecoName());
+            lStrings.add(line);
+            n++;    
+        }
+        return lStrings;
     }
 }
