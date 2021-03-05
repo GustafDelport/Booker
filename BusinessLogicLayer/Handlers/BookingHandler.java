@@ -39,13 +39,6 @@ public class BookingHandler {
         bookings booking = new bookings(bookingID, username, status, date, type, numberOfPeople, food, decorations);
 
         //Make a notification
-        String line = String.format("%s,%s,%s,%s",bookingID,username,date,type);
-
-        NotificationHandler nHandler = new NotificationHandler();
-        List<String> nList = nHandler.GetNotifications();
-        
-        nList.add(line);
-        nHandler.PushNotifications(nList);
 
         switch (type) {
             case "Baptism": {
