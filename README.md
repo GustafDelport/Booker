@@ -52,4 +52,5 @@ The **Admin** login will allow certain actions and tasks that would've otherwise
 **Username:** Admin<br>
 **Password:** 123
 
+## UML Design
 ![detailed UML design](https://github.com/GustafDelport/Booker/blob/Master/Documentation/Booker%20UML%20Design.jpg)
