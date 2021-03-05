@@ -1,5 +1,6 @@
 package BusinessLogicLayer.Booking;
 
+import java.util.List;
 import java.util.Random;
 
 import BusinessLogicLayer.Handlers.*;
@@ -25,6 +26,14 @@ public class bookParty implements BookingInterface {
         
         StorageHandler sHandler = new StorageHandler();
         sHandler.StoreBooking(booking);
+
+        String line = String.format("%s,%s,%s,%s",bID,booking.getClientUsername(),booking.getDate(),type);
+
+        NotificationHandler nHandler = new NotificationHandler();
+        List<String> nList = nHandler.GetNotifications();
+        
+        nList.add(line);
+        nHandler.PushNotifications(nList);
     }
 
     @Override
