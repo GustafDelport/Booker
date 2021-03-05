@@ -1,11 +1,7 @@
 package BusinessLogicLayer.Handlers;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.io.*;
+import java.util.*;
 
 import BusinessLogicLayer.Booking.bookBaptism;
 import BusinessLogicLayer.Booking.bookBirthDay;
@@ -76,7 +72,7 @@ public class BookingHandler {
             list.add("You Dont Have Any Bookings");
         } else {
             String line = String.format(
-                    "Booking ID: \t\t%s \nType: \t\t%s \nPrice: \t\t%f \nDate: \t\t%s \nStatus: \t%s", b.getBookingID(),
+                    "Booking ID: \t%s \nType: \t\t%s \nPrice: \t\t%f \nDate: \t\t%s \nStatus: \t%s", b.getBookingID(),
                     b.getType(), b.getPrice(), b.getDate(), b.getStatus());
             list.add(line);
         }

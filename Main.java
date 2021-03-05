@@ -69,15 +69,7 @@ public class Main {
                 switch (menuOpt) {
                     case 1:
                         {
-                            //SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
-                            //Date date = new Date(System.currentTimeMillis());
-                            
-                            //Get user input from displays
-                            // BookingHandler bHandler = new BookingHandler("Jan", date, "Wedding", 50);
-                            // bHandler.MakeBooking();
-
-
-                            
+                            //
                         }
                         break;
                     case 2:
