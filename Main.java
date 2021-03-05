@@ -143,6 +143,11 @@ public class Main {
                             System.exit(0);
                         }
                         break;
+                    default:
+                        {
+                            System.exit(0);
+                        }
+                        break;     
                 }
             }
             else{
@@ -205,6 +210,11 @@ public class Main {
                             System.exit(0);
                         }
                         break;
+                    default:
+                        {
+                            System.exit(0);
+                        }
+                        break;    
                 }
             }
         }
