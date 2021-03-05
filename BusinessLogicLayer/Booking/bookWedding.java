@@ -20,6 +20,8 @@ public class bookWedding implements BookingInterface {
             booking.setPrice((pricePerPerson * booking.getNumberOfPeople())*0.85);
         }
         else booking.setPrice((pricePerPerson * booking.getNumberOfPeople()));
+
+        booking.setStatus("Pending");
         
         StorageHandler sHandler = new StorageHandler();
         sHandler.StoreBooking(booking);

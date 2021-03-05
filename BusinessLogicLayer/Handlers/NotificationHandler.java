@@ -1,28 +1,23 @@
 package BusinessLogicLayer.Handlers;
 
-import DataAccessLayer.DataObjets.*;
+import java.util.List;
+
+import DataAccessLayer.Serialisation.Deserialiser;
+import DataAccessLayer.Serialisation.Serialiser;
 
 public class NotificationHandler {
 
     //use the user to get info and send mails and conformations
 
-    public NotificationHandler(){
-        // Code here
+    public NotificationHandler(){}
+
+    public List<String> GetNotifications(){
+        Deserialiser des = new Deserialiser();
+        return des.DeserialiseNotification();
     }
 
-    public String SendMail(user user){
-        return null;
+    public void PushNotifications(List<String> list){
+        Serialiser ser = new Serialiser();
+        ser.SerialiseNotification(list);
     }
-
-    public String confirmBooking(user user){
-        return null;
-    }
-
-    public String getBooking(){
-        return null;
-    }
-
-    public String genNotification(){
-        return null;
-    } 
 }

@@ -21,6 +21,8 @@ public class bookYearEnd implements BookingInterface {
         }
         else booking.setPrice((pricePerPerson * booking.getNumberOfPeople()));
 
+        booking.setStatus("Pending");
+
         StorageHandler sHandler = new StorageHandler();
         sHandler.StoreBooking(booking);
     }

@@ -1,3 +1,4 @@
+
 import java.io.FileNotFoundException;
 import java.util.List;
 import BusinessLogicLayer.Handlers.*;
@@ -69,12 +70,72 @@ public class Main {
                 switch (menuOpt) {
                     case 1:
                         {
-                            //Confrim Bookings
+                            //Notifications
+                            NotificationHandler nHandler = new NotificationHandler();
+                            switch (displays.NotiMenu()) {
+                                case 1:
+                                    {
+                                        Displays.clrscr();
+                                        List<String> list = nHandler.GetNotifications();
+
+                                        for (String string : list) {
+                                            String[] aStrings = string.split(",");
+                                            String line = String.format("|ID: \t%s | Username: \t%s | Date: \t%s | Type: \t%s |", aStrings[0],aStrings[1],aStrings[2],aStrings[3]);
+                                            System.out.println(line);
+                                        }
+                                    }
+                                    break;
+                            
+                                case 2:
+                                    {
+                                        Displays.clrscr();
+                                        //Admin Aproves Message Here
+                                        List<String> list = nHandler.GetNotifications();
+                                        int target = displays.NotificationSettings(list)-1;
+                                        
+                                        //We get username here to edit status of a booking
+                                        String[] aStrings = list.get(target).split(",");
+                                        username = aStrings[1];
+
+                                        //We remove the selected notification and push the new list
+                                        list.remove(target);
+                                        nHandler.PushNotifications(list);
+
+                                        //Here we are going to update status of a booking
+                                        bHandler.UpdateStatus(username);  
+                                    }
+                                    break;
+                                case 3:
+                                    {
+                                        displays.AdminMenu();
+                                    }
+                                    break;
+                            }
+                            
                         }
                         break;
                     case 2:
                         {
-                            //Notifications
+                            switch (displays.AdminViewOptions()) {
+                                case 1:
+                                    {
+                                        System.out.println("============ Non Confirmed ============");
+                                        for (String string : bHandler.ViewBookingsByStatus("Non")) {
+                                            System.out.println(string);
+                                        }
+                                        System.out.println("=======================================");
+                                    }
+                                    break;
+                                case 2:
+                                    {
+                                        System.out.println("============== Confirmed ==============");
+                                        for (String string : bHandler.ViewBookingsByStatus("Con")) {
+                                            System.out.println(string);
+                                        }
+                                        System.out.println("=======================================");
+                                    }
+                                    break;
+                            }
                         }
                         break;
                     case 3:
@@ -105,7 +166,7 @@ public class Main {
                             List<String> lStrings = displays.BookingMenu();
                             //0 = Name 1 = Date 2 = Type 3 = NoP
                             bHandler = new BookingHandler(lStrings.get(0), lStrings.get(1), lStrings.get(2), Integer.parseInt(lStrings.get(3)) , displays.FoodMenu(), displays.DecoMenu());
-
+                
                             bHandler.MakeBooking(username);
                         }
                         break;

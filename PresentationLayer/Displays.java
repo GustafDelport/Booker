@@ -75,10 +75,10 @@ public class Displays {
     public int AdminMenu() {
 
         System.out.println("============ Booker ============");
-        System.out.println("Menu Items\n1 - Confirm Bookings\n2 - Notifications");
+        System.out.println("Menu Items\n1 - Notifications\n2 - View Bookings\n3 - Exit");
         System.out.println("================================");
 
-        // Validate anwser either 1 or 2 or 3 or 4
+        // Validate anwser either 1 or 2
         int a = iScanner.nextInt();
 
         if (a == 1 || a == 2 || a == 3) {
@@ -265,6 +265,72 @@ public class Displays {
         return iScanner.nextInt();
     }
 
+    public int NotiMenu(){
+        clrscr();
+        boolean flag = true;
+        int a = 0;
+
+        while (flag) {
+            System.out.println("============ Notifications ============");
+            System.out.println("Notification Options\n1 - View Notifications\n2 - Approve Bookings\n3 - Back");
+            System.out.println("======================================");
+            a = iScanner.nextInt();
+    
+            if (a == 1 || a == 2 || a == 3) {
+                flag = false;
+            }
+            else flag = true;
+        }
+        return a;
+    }
+    
+    public int NotificationSettings(List<String> list){
+        clrscr();
+        boolean flag = true;
+        int a = 0;
+
+        while (flag) {
+            System.out.println("============ Choose Notification ============");
+
+            int n = 1;
+
+            for (String string : list) {
+                String[] aStrings = string.split(",");
+                String line = String.format("%d: |ID: \t%s | Username: \t%s | Date: \t%s | Type: \t%s |",n,aStrings[0],aStrings[1],aStrings[2],aStrings[3]);
+                System.out.println(line);
+                n++;
+            }
+            
+            System.out.println("=============================================");
+            a = iScanner.nextInt();
+
+            if (a < 1 && a > list.size()) {
+                flag = true;
+            }else flag = false;
+        }
+
+        return a;
+    }
+
+    public int AdminViewOptions(){
+        boolean flag = true;
+        int a = 0;
+        while (flag) {
+            System.out.println("============ Booker ============");
+            System.out.println("Menu Items\n1 - View Non-Confirmed Bookings\n2 - View Confirmed Bookings");
+            System.out.println("================================");
+
+            a = iScanner.nextInt();
+
+            if (a == 1 || a == 2) {
+                flag = false;
+            } else  System.out.println("That was not a valid input");
+        }
+
+
+        return a;
+
+    }
     public static void clrscr(){
         //Clears Screen in java
         try {
