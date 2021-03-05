@@ -1,23 +1,12 @@
 package DataAccessLayer.DataObjets;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 public class Decorations {
     private int decoID;
     private String decoName;
-    private int decoQuant;
 
     public Decorations(){
 		// Code here
 	}
-
-    public List<Decorations> getDecorations(ArrayList<String> ID){
-
-        // Temporary - used instead of "null"
-        return Collections.emptyList();
-    }
 
 	public int getDecoID() {
 		return decoID;
@@ -35,11 +24,8 @@ public class Decorations {
 		this.decoName = decoName;
 	}
 
-	public int getDecoQuant() {
-		return decoQuant;
-	}
-
-	public void setDecoQuant(int decoQuant) {
-		this.decoQuant = decoQuant;
+	public Decorations(int decoID, String decoName) {
+		this.decoID = decoID;
+		this.decoName = decoName;
 	}
 }
