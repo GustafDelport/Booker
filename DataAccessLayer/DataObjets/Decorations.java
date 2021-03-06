@@ -1,6 +1,7 @@
 package DataAccessLayer.DataObjets;
 
-public class Decorations {
+public class Decorations 
+{
     private int decoID;
     private String decoName;
 
@@ -8,23 +9,28 @@ public class Decorations {
 		// Code here
 	}
 
-	public int getDecoID() {
+	public int getDecoID() 
+	{
 		return decoID;
 	}
 
-	public void setDecoID(int decoID) {
+	public void setDecoID(int decoID) 
+	{
 		this.decoID = decoID;
 	}
 
-	public String getDecoName() {
+	public String getDecoName() 
+	{
 		return decoName;
 	}
 
-	public void setDecoName(String decoName) {
+	public void setDecoName(String decoName) 
+	{
 		this.decoName = decoName;
 	}
 
-	public Decorations(int decoID, String decoName) {
+	public Decorations(int decoID, String decoName) 
+	{
 		this.decoID = decoID;
 		this.decoName = decoName;
 	}
