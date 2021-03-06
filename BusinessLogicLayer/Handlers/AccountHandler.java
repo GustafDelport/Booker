@@ -5,7 +5,8 @@ import java.io.File;
 import DataAccessLayer.DataObjets.*;
 
 //Handles Logins and Registrations
-public class AccountHandler {
+public class AccountHandler 
+{
     private String name;
     private String surname;
     private String phone;
@@ -14,13 +15,15 @@ public class AccountHandler {
     private String email;
 
     //Called when we want to Login
-    public AccountHandler(String Username, String Password){
+    public AccountHandler(String Username, String Password)
+    {
         this.password = Password;
         this.username = Username;
     }
 
     //Called when we want to Register
-    public AccountHandler(String Name, String Surname, String Phone, String Email, String Username, String Password){
+    public AccountHandler(String Name, String Surname, String Phone, String Email, String Username, String Password)
+    {
         this.name = Name;
         this.surname = Surname;
         this.phone = Phone;
@@ -29,9 +32,11 @@ public class AccountHandler {
         this.password = Password;
     }
 
-    public boolean Register(){
+    public boolean Register()
+    {
         //use try to see if we can retrieve a user
-        if (ValidateUsername(username)) {
+        if (ValidateUsername(username)) 
+        {
             return false;
         }
         else {
@@ -43,7 +48,8 @@ public class AccountHandler {
         }     
     }
 
-    public boolean LoginAuth(){
+    public boolean LoginAuth()
+    {
         boolean flag = false;
 
         //Access DataHandler here to retrieve user info.
@@ -52,7 +58,8 @@ public class AccountHandler {
 
         //System.out.println(username);
 
-        if (password.equals(user.getPassword()) && username.equals(user.getUsername())){
+        if (password.equals(user.getPassword()) && username.equals(user.getUsername()))
+        {
             flag = true;    
         }
         else flag = false;
@@ -62,21 +69,26 @@ public class AccountHandler {
         return flag;
     }
 
-    public boolean ValidateUsername(String username){
+    public boolean ValidateUsername(String username)
+    {
         boolean flag = false;
         File file = new File(System.getProperty("user.dir") + "\\SerialisedObjects\\" + username + ".ser");
 
-        if (!file.exists()) {
+        if (!file.exists()) 
+        {
             flag = false;
-        }else flag = true;
+        }
+        else flag = true;
 
         return flag;
     }
 
-    public boolean ValidateRole(){
+    public boolean ValidateRole()
+    {
         boolean flag = false;
 
-        if (username.equals("Admin")) {
+        if (username.equals("Admin")) 
+        {
             flag = true;
         }
         else flag = false;
