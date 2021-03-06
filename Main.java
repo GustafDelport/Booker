@@ -1,11 +1,12 @@
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 import BusinessLogicLayer.Handlers.*;
 import PresentationLayer.Displays;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         //Variables
         //#region
         Displays displays = new Displays();
@@ -120,7 +121,7 @@ public class Main {
                                 case 1:
                                     {
                                         System.out.println("============ Not Confirmed ============");
-                                        for (String string : bHandler.ViewBookingsByStatus("Non")) {
+                                        for (String string : bHandler.ViewBookingsByStatus("Pending")) {
                                             System.out.println(string);
                                         }
                                         System.out.println("=======================================");
@@ -129,7 +130,7 @@ public class Main {
                                 case 2:
                                     {
                                         System.out.println("============== Confirmed ==============");
-                                        for (String string : bHandler.ViewBookingsByStatus("Con")) {
+                                        for (String string : bHandler.ViewBookingsByStatus("Aproved")) {
                                             System.out.println(string);
                                         }
                                         System.out.println("=======================================");

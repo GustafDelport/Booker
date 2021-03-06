@@ -2,6 +2,10 @@ package BusinessLogicLayer.Handlers;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +36,11 @@ public class StorageHandler {
 
         // NOTE try saving all bookings of a person in a list of bookings and read
         // through list and save it as their username.ser
+    }
+
+    public bookings RetrieveBookingRoot(String Root) {
+        Deserialiser des = new Deserialiser();
+        return des.DeserialiseBookingRoot(Root);
     }
 
     public List<String> RetrieveFoodMenu() throws FileNotFoundException {
@@ -69,23 +78,31 @@ public class StorageHandler {
 
     //Status  : "Non" / "Con"
 
-    public List<String> RetrieveStatusBookings(String Status){
+    public List<String> RetrieveStatusBookings(String Status) throws IOException{
 
         List<bookings> bookings = new ArrayList<bookings>();
         List<String> aList = new ArrayList<String>();
 
-        File file = new File(System.getProperty("user.dir") + "\\SerialisedObjects\\BookingData\\");
-        File[] listOfFiles = file.listFiles();
+        String dirLocation = System.getProperty("user.dir") + "\\SerialisedObjects\\BookingData\\";
+        String nameAndRoot;
 
-        for (File item : listOfFiles) {
-            bookings.add(RetrieveBooking(item.getName()));
-        }
+        try {
+            for (Path path : Files.newDirectoryStream(Paths.get(dirLocation),path -> path.toFile().isFile())) {
+                path = path.normalize();
+                
+                nameAndRoot = path.getFileName().toString();
 
-        for (bookings item : bookings) {
-            if (item.getStatus().equals(Status)){
-                String line = String.format("ID: %s\nUsername: %S\nDate: %s\nType: %s\nStatus: %s\n", item.getBookingID(),item.getClientUsername(),item.getDate(),item.getType(),item.getStatus());
-                aList.add(line);
+                bookings.add(RetrieveBookingRoot(nameAndRoot));
             }
+    
+            for (bookings item : bookings) {
+                if (item.getStatus().equals(Status)){
+                    String line = String.format("ID: %s\nUsername: %S\nDate: %s\nType: %s\nStatus: %s\n", item.getBookingID(),item.getClientUsername(),item.getDate(),item.getType(),item.getStatus());
+                    aList.add(line);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e);
         }
 
         return aList;

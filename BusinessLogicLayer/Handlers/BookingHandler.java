@@ -188,7 +188,7 @@ public class BookingHandler
         return message;
     }
 
-    public List<String> ViewBookingsByStatus(String Status)
+    public List<String> ViewBookingsByStatus(String Status) throws IOException
     {
         StorageHandler sHandler = new StorageHandler();
         return sHandler.RetrieveStatusBookings(Status);
