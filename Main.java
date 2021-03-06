@@ -119,7 +119,7 @@ public class Main {
                             switch (displays.AdminViewOptions()) {
                                 case 1:
                                     {
-                                        System.out.println("============ Non Confirmed ============");
+                                        System.out.println("============ Not Confirmed ============");
                                         for (String string : bHandler.ViewBookingsByStatus("Non")) {
                                             System.out.println(string);
                                         }
