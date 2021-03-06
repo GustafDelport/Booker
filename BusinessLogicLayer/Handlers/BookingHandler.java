@@ -12,7 +12,8 @@ import DataAccessLayer.DataObjets.bookings;
 import DataAccessLayer.Serialisation.Deserialiser;
 import DataAccessLayer.Serialisation.Serialiser;
 
-public class BookingHandler {
+public class BookingHandler 
+{
     private String bookingID;
     private String username;
     private String type;
@@ -34,7 +35,8 @@ public class BookingHandler {
     public BookingHandler() {
     }
 
-    public void MakeBooking(String username) {
+    public void MakeBooking(String username) 
+    {
 
         bookings booking = new bookings(bookingID, username, status, date, type, numberOfPeople, food, decorations);
 
@@ -69,14 +71,15 @@ public class BookingHandler {
     }
 
     // One implement that why its not part of the interface
-    public List<String> ViewBookings(String username) {
-
+    public List<String> ViewBookings(String username) 
+    {
         List<String> list = new ArrayList<>();
         StorageHandler sHandler = new StorageHandler();
 
         bookings b = sHandler.RetrieveBooking(username);
 
-        if (Objects.isNull(b)) {
+        if (Objects.isNull(b)) 
+        {
             list.add("You Dont Have Any Bookings");
         } else {
             String line = String.format(
@@ -87,7 +90,8 @@ public class BookingHandler {
         return list;
     }
 
-    public String EditDate(String username, String date) {
+    public String EditDate(String username, String date) 
+    {
         StorageHandler sHandler = new StorageHandler();
         bookings b = sHandler.RetrieveBooking(username);
         String message = "";
@@ -104,7 +108,8 @@ public class BookingHandler {
         return message;
     }
 
-    public String EditPrice(String username, int NoP) {
+    public String EditPrice(String username, int NoP)
+    {
         StorageHandler sHandler = new StorageHandler();
         bookings b = sHandler.RetrieveBooking(username);
         String message = "";
@@ -150,7 +155,8 @@ public class BookingHandler {
         return message;
     }
 
-    public String DeleteBooking(String username) throws FileNotFoundException {
+    public String DeleteBooking(String username) throws FileNotFoundException 
+    {
 
         StorageHandler sHandler = new StorageHandler();
         bookings b = sHandler.RetrieveBooking(username);
@@ -167,7 +173,8 @@ public class BookingHandler {
         return message;
     }
 
-    public String UpdateStatus(String username){
+    public String UpdateStatus(String username)
+    {
 
         Deserialiser des = new Deserialiser();
         bookings b = des.DeserialiseBooking(username);
@@ -181,7 +188,8 @@ public class BookingHandler {
         return message;
     }
 
-    public List<String> ViewBookingsByStatus(String Status){
+    public List<String> ViewBookingsByStatus(String Status)
+    {
         StorageHandler sHandler = new StorageHandler();
         return sHandler.RetrieveStatusBookings(Status);
     }
