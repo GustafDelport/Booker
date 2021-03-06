@@ -24,7 +24,8 @@ public class Displays {
         return userInfo;
     }
 
-    public int initialMenu() {
+    public int initialMenu() 
+    {
         clrscr();
 
         boolean flag = false;
@@ -46,7 +47,8 @@ public class Displays {
         return a;
     }
 
-    public List<String> RegisterMenu() {
+    public List<String> RegisterMenu() 
+    {
         List<String> list = new ArrayList<>();
 
         System.out.println("Enter Name: ");
@@ -72,7 +74,8 @@ public class Displays {
         return list;
     }
 
-    public int AdminMenu() {
+    public int AdminMenu() 
+    {
 
         System.out.println("============ Booker ============");
         System.out.println("Menu Items\n1 - Notifications\n2 - View Bookings\n3 - Exit");
@@ -81,14 +84,16 @@ public class Displays {
         // Validate anwser either 1 or 2
         int a = iScanner.nextInt();
 
-        if (a == 1 || a == 2 || a == 3) {
+        if (a == 1 || a == 2 || a == 3) 
+        {
             // flag = true;
         } else
             System.out.println("That was not a valid input");
         return a;
     }
 
-    public int ClientMenu() {
+    public int ClientMenu() 
+    {
         System.out.println("============ Booker ============");
         System.out.println("Menu Items\n1 - View Booking\n2 - Make Booking\n3 - Edit Booking");
         System.out.println("================================");
@@ -96,25 +101,29 @@ public class Displays {
         // Validate anwser either 1 or 2 or 3 or 4
         int a = iScanner.nextInt();
 
-        if (a == 1 || a == 2 || a == 3 || a == 4) {
+        if (a == 1 || a == 2 || a == 3 || a == 4) 
+        {
             // flag = true;
         } else
             System.out.println("That was not a valid input");
         return a;
     }
 
-    public int EditBookingMenu() {
+    public int EditBookingMenu() 
+    {
         boolean flag = true;
         int a = 0;
 
-        while (flag) {
+        while (flag) 
+        {
             clrscr();
             System.out.println("============ Make Booking ============");
             System.out.println("Booking Options \n1 - Edit Date\n2 - Edit Number Of People\n3 - Delete Booking");
             System.out.println("======================================");
             a = iScanner.nextInt();
 
-            if (a == 1 || a == 2 || a == 3) {
+            if (a == 1 || a == 2 || a == 3) 
+            {
                 flag = false;
             } else
                 flag = true;
@@ -122,7 +131,8 @@ public class Displays {
         return a;
     }
 
-    public List<String> BookingMenu() {
+    public List<String> BookingMenu() 
+    {
         // Questions and stuff
         List<String> lStrings = new ArrayList<>();
 
@@ -145,12 +155,13 @@ public class Displays {
         return lStrings;
     }
 
-    public String BookingTypes() {
-
+    public String BookingTypes() 
+    {
         System.out.println("1 - Baptism\n2 - Birthday\n3 - Party\n4 - Wedding\n5 - Year-End");
         String type = "";
 
-        switch (iScanner.nextInt()) {
+        switch (iScanner.nextInt()) 
+        {
             case 1:
                 type = "Baptism";
                 break;
@@ -174,11 +185,13 @@ public class Displays {
         return type;
     }
 
-    public List<String> FoodMenu() throws FileNotFoundException {
+    public List<String> FoodMenu() throws FileNotFoundException 
+    {
         List<String> sList = new ArrayList<>();
         boolean flag = true;
 
-        while (flag) {
+        while (flag) 
+        {
             clrscr();
             System.out.println("============ Choose Food ============");
 
@@ -187,7 +200,8 @@ public class Displays {
             StorageHandler sHandler = new StorageHandler();
             foodRaw = sHandler.RetrieveFoodMenu();
             
-            for (String string : foodRaw) {
+            for (String string : foodRaw) 
+            {
                 System.out.println(string);
             }
 
@@ -215,7 +229,8 @@ public class Displays {
         return sList;
     }
 
-    public List<String> DecoMenu() throws FileNotFoundException {
+    public List<String> DecoMenu() throws FileNotFoundException 
+    {
         List<String> sList = new ArrayList<>();
         boolean flag = true;
 
@@ -228,7 +243,8 @@ public class Displays {
             StorageHandler sHandler = new StorageHandler();
             DecoRaw = sHandler.RetrieveDecorations();
             
-            for (String string : DecoRaw) {
+            for (String string : DecoRaw) 
+            {
                 System.out.println(string);
             }
             
@@ -245,7 +261,8 @@ public class Displays {
             System.out.println("\nWant to order More? \n1 - Yes\n2 - No");
             int opt = iScanner.nextInt();
 
-            if (opt == 1) {
+            if (opt == 1) 
+            {
                 flag = true;
             }
             else flag = false;
@@ -265,7 +282,8 @@ public class Displays {
         return iScanner.nextInt();
     }
 
-    public int NotiMenu(){
+    public int NotiMenu()
+    {
         clrscr();
         boolean flag = true;
         int a = 0;
@@ -276,7 +294,8 @@ public class Displays {
             System.out.println("======================================");
             a = iScanner.nextInt();
     
-            if (a == 1 || a == 2 || a == 3) {
+            if (a == 1 || a == 2 || a == 3) 
+            {
                 flag = false;
             }
             else flag = true;
@@ -284,12 +303,14 @@ public class Displays {
         return a;
     }
     
-    public int NotificationSettings(List<String> list){
+    public int NotificationSettings(List<String> list)
+    {
         clrscr();
         boolean flag = true;
         int a = 0;
 
-        while (flag) {
+        while (flag) 
+        {
             System.out.println("============ Choose Notification ============");
 
             int n = 1;
@@ -312,7 +333,8 @@ public class Displays {
         return a;
     }
 
-    public int AdminViewOptions(){
+    public int AdminViewOptions()
+    {
         boolean flag = true;
         int a = 0;
         while (flag) {
@@ -331,7 +353,8 @@ public class Displays {
         return a;
 
     }
-    public static void clrscr(){
+    public static void clrscr()
+    {
         //Clears Screen in java
         try {
             if (System.getProperty("os.name").contains("Windows"))
