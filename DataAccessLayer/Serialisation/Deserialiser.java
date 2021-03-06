@@ -44,6 +44,24 @@ public class Deserialiser {
         return booking;
     }
 
+    public bookings DeserialiseBookingRoot(String Root) {
+        bookings booking = new bookings();
+        try {
+            FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\SerialisedObjects\\BookingData\\" + Root);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            booking = (bookings)ois.readObject();
+
+            fis.close();
+            ois.close();
+
+        } catch (Exception mes) {
+            //System.out.println(mes);
+            booking = null;
+        }
+        return booking;
+    }
+
     public List<String> DeserialiseNotification(){
         List<String> list = new ArrayList<String>();
 
