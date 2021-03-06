@@ -9,12 +9,12 @@ import java.util.Scanner;
 import DataAccessLayer.DataObjets.Decorations;
 import DataAccessLayer.DataObjets.Menu;
 
-public class LogisticsHandler {
+public class LogisticsHandler 
+{
+    public LogisticsHandler() {}
 
-    public LogisticsHandler() {
-    }
-
-    public List<Menu> getFood() throws FileNotFoundException {
+    public List<Menu> getFood() throws FileNotFoundException
+    {
         List<Menu> mList = new ArrayList<Menu>();
 
         File file = new File(System.getProperty("user.dir") + "\\DataAccessLayer\\TextFiles\\" +"Food.txt");
@@ -31,7 +31,8 @@ public class LogisticsHandler {
         return mList;
     }
 
-    public List<Decorations> getDecorations() throws FileNotFoundException {
+    public List<Decorations> getDecorations() throws FileNotFoundException 
+    {
         List<Decorations> dList = new ArrayList<Decorations>();
 
         File file = new File(System.getProperty("user.dir") + "\\DataAccessLayer\\TextFiles\\" +"Decorations.txt");
