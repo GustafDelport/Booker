@@ -11,12 +11,14 @@ public class NotificationHandler {
 
     public NotificationHandler(){}
 
-    public List<String> GetNotifications(){
+    public List<String> GetNotifications()
+    {
         Deserialiser des = new Deserialiser();
         return des.DeserialiseNotification();
     }
 
-    public void PushNotifications(List<String> list){
+    public void PushNotifications(List<String> list)
+    {
         Serialiser ser = new Serialiser();
         ser.SerialiseNotification(list);
     }
